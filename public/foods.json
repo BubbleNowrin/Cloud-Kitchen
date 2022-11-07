@@ -1,0 +1,134 @@
+[
+    {
+        "name": "Flaming Double Patty Beef Burger",
+        "price": "10",
+        "total_ordered": 545,
+        "rating": {
+            "number": 5,
+            "badge": "Excellent"
+        },
+        "details": "It consists of a bun, a ground meat patty and often ingredients such as cheese, onion slices, lettuce and other condiments. It's a popular fast food around the world. it's popular among the young generations and kids generally.",
+        "image": "https://media.istockphoto.com/id/1254672762/photo/delicious-homemade-hamburger-and-french-fries.jpg?b=1&s=170667a&w=0&k=20&c=a0kPiHhzTncW-_LdM7cXcLiB9KLXuEb8KAJt7AlVuO0="
+    },
+    {
+        "name": "Italian Thin Crust Pizza",
+        "price": "18",
+        "total_ordered": 234,
+        "rating": {
+            "number": 4.2,
+            "badge": "Excellent"
+        },
+        "details": " Pizza, dish of Italian origin consisting of a flattened disk of bread dough topped with some combination of olive oil, oregano, tomato, olives, mozzarella or other cheese, and many other ingredients, baked quickly usually, in a commercial setting, using a wood-fired oven heated to a very high temperature and served hot  taste mixed  bombardment l touch  pulling pizza slices and the 'chew' factor l sound  bubbling cheese l vision narray of colour and l smell  80pc of flavour we perceive is by smell and only 20pc by taste.  It's truly a wonderful taste when you take that first bite, and al the flavors of the sauce, cheese, and seasoning go rushing towards your taste buds. Second thing, the sound pizza makes. That crunchy sound you hear when biting into that delicious seasoned crust. It's like heaven on earth.        ",
+        "image": "https://media.istockphoto.com/id/1318665305/photo/baked-pizza-in-the-stone-oven.jpg?b=1&s=170667a&w=0&k=20&c=T6JZGOXFziUCoOYYgLPyawTrn2i_xt1MmvdqYfrAYJ0="
+    },
+    {
+        "name": "Spaghetti Bolognese",
+        "price": "13",
+        "total_ordered": 48,
+        "rating": {
+            "number": 4.2,
+            "badge": "Good"
+        },
+        "details": "Spaghetti bolognese consists of spaghetti (long strings of pasta) with an Italian ragù (meat sauce) made with minced beef, bacon and tomatoes, served with Parmesan cheese. Spaghetti bolognese is one of the most popular pasta dishes eaten outside of Italy.Spaghetti bolognese (spaghetti alla bolognese in Italian, pronounced:spa-GET-tie alla bolo-NYEH-seh ) is a main course consisting of spaghetti (long thin strings of pasta) with a bolognese sauce over it.It is a corrupted version of the traditional ragù alla Bolognese: pasta with a meat sauce as they make it in the city of Bologna. But calling spaghetti bolognese an Italian dish would be a step too far, and many Italians would be disappointed with the description. ",
+        "image": "https://media.istockphoto.com/id/1166681454/photo/spaghetti-with-bolognese-sauce-and-parmesan-cheese.jpg?b=1&s=170667a&w=0&k=20&c=LVl4FsQFzt1GQfiXdBECamV3bv604j0400LVzS5ahFM="
+    },
+    {
+        "name": "Fajitas",
+        "price": "15",
+        "total_ordered": 438,
+        "rating": {
+            "number": 4.5,
+            "badge": "Excellent"
+        },
+        "details": "The Mexican dish, fajitas consists of sizzling pieces of marinated meat that are served together with bell peppers and onions on a skillet. The dish is served with warm tortillas and part of the charm is that you have to assemble your own fajita.The dish, fajitas (pronounced “fa-hee-tas”) is a well-known dish in Mexican restaurants where sizzling pieces of marinated meat are served together on a skillet with colourful bell peppers and caramelised onion. The dish is served with a basket of soft, warm tortillas along with a number of other tasty side dishes, for example, sour cream, guacamole and salsa. Part of the charm of fajitas is that you have to assemble your own fajita using the provided ingredients. ",
+        "image": "https://media.istockphoto.com/id/1347087219/photo/assortment-of-delicious-authentic-tacos-birria-carne-asada-adobada-cabeza-and-chicharone.jpg?b=1&s=170667a&w=0&k=20&c=ea26j7XBxfyCPZynRh_8TXOCcCRzUfHJB_1e9TMxK1o="
+    },
+    {
+        "name": "Teriyaki",
+        "price": "20",
+        "total_ordered": 438,
+        "rating": {
+            "number": 5,
+            "badge": "Excellent"
+        },
+        "details": "Teriyaki is a Japanese cooking technique in which the main ingredient, usually meat or fish is marinated in a special sauce, the teriyaki sauce, and then grilled or roasted. During grilling or roasting, the ingredient is often coated several times with the sauce.Teriyaki (pronounced ter-rie-jak-kie with equal emphasis on each syllable) is a Japanese cooking technique where the main ingredient, usually meat or fish, is marinated in a special sauce and then grilled or roasted. During grilling or roasting, the ingredient is often coated several times with the sauce. The sauce (tare) for teriyaki traditionally consists of soy sauce, mirin and/or sake (two kinds of rice wine) and sugar. The mirin, a syrupy wine, gives the dish a nice shine when cooked. This sheen gives the dish its name; teri means shine and yaki means grill or roast.",
+        "image": "https://media.istockphoto.com/id/1314699804/photo/chicken-wings-roasted-with-teriyaki-sauce-served-with-lime-cilantro-and-sesame-seeds.jpg?b=1&s=170667a&w=0&k=20&c=BUdAOqGX2-rx0QkV-xyTU0GJVMEALCFwoZfZQdddSaw="
+    },
+    {
+        "name": "Yam nua",
+        "price": "12",
+        "total_ordered": 288,
+        "rating": {
+            "number": 4.5,
+            "badge": "Excellent"
+        },
+        "details": "Yam nua is a salad (yam) made from grilled steak (nua) that is smothered in a dressing of lime juice, fish sauce, sugar and Thai chilli peppers called nam yam locally. The salad also contains onions, spring onions, vegetables and fresh herbs.The Thai dish yam nua (pronounced ‘jam nuwa’) is a salad (that’s the yam) made from steak (that’ll be the nua part). Authentic yam nua steak (yang) is used, which is why the dish bears the complete name of yam nua yang. However, even more important than the meat is the dressing, dubbed nam yam. This delicious dressing has four pronounced flavours that balance beautifully. There’s sourness from the lime juice, salt from the fish sauce, sweetness from the sugar and heat from the chilli peppers. ",
+        "image": "https://images.unsplash.com/photo-1626509653291-18d9a934b9db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHlhbSUyMG51YXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "name": "Burrito",
+        "price": "16",
+        "total_ordered": 488,
+        "rating": {
+            "number": 4.5,
+            "badge": "Excellent"
+        },
+        "details": "A burrito is a rolled wheat tortilla with a filling; a type of Mexican or Tex-Mex cuisine. Many fillings are possible, such as seasoned minced meat, chicken, salmon, avocado or grilled vegetables. Burrito literally means little donkey although no one knows exactly why.A burrito (pronounced “burr-REE-toh”) is a rolled-up wheat tortilla with a filling; a type of Mexican or Tex-Mex cuisine. Many fillings are possible, such as seasoned minced meat, chicken, salmon, avocado or grilled vegetables. Burrito literally means “little donkey” although no one knows exactly why. Don’t be afraid: no donkeys are used in the dish.Burritos have been eaten for a long time; certainly for at least 125 years. The dish is described in the Diccionario de Mexicanismos from 1895 as a “rolled up tortilla with meat or other ingredients in it”. Although they are one of the most popular dishes from Mexican cuisine, burritos in Mexico are mainly eaten in the north. Furthermore, they only exist on tourist menus in the country itself.",
+        "image": "https://media.istockphoto.com/id/1300815223/photo/beef-burritos-with-beans-and-cheese.jpg?b=1&s=170667a&w=0&k=20&c=dooKrdhWI5BEq1favwo0MfTOc-AzHDSQvXntqjRrm4o="
+    },
+    {
+        "name": "Dim sum",
+        "price": "22",
+        "total_ordered": 138,
+        "rating": {
+            "number": 4.7,
+            "badge": "Excellent"
+        },
+        "details": "Dim sum is a category of food from the Chinese province of Guangdong consisting of bite-sized dishes: sweet or savoury, hot or cold. They can be steamed, baked or fried. Sometimes they are small sandwiches, sometimes dumplings, wraps, spring rolls, mini tarts or puddings.Dim sum is a category of food from the Chinese province of Guangdong consisting of single, bite-sized dishes. Dim sum can be sweet or savoury and may be served hot or cold. They can be steamed, baked or fried. Sometimes they are small sandwiches, sometimes dumplings, wraps, spring rolls, or even mini tarts or puddings. There are also those which, at least from the outside, resemble a meatball.Dim sum literally means “touching the heart”, which refers to the original intention of dim sum: the small bites were meant to impress, not to satisfy a great hunger. ",
+        "image": "https://media.istockphoto.com/id/1341504203/photo/fried-momos-dumpling.jpg?b=1&s=170667a&w=0&k=20&c=VMmok_m2QBr6rjHfem4Sc4-sfPDqMjg1YjTyxuQCmck="
+    },
+    {
+        "name": "Paella",
+        "price": "30",
+        "total_ordered": 108,
+        "rating": {
+            "number": 5,
+            "badge": "Excellent"
+        },
+        "details": "Paella is a Spanish rice dish from the Valencia region and contains rice and plenty of seafood ingredients, including shrimps, squid and mussels, alongside saffron and beans. It is prepared in a shallow pan called a patella in Latin, which the dish is named after.Paella (pronounced: ‘paa-EL-ja’) is a Spanish rice dish from the Valencia region, where the short grain rice used in the dish has been cultivated for centuries. In addition to rice, staple ingredients include seafood – with squid, shrimps and mussels popular – as well as saffron and beans. Paella is prepared in a special shallow pan, with this pan (known as a patella in Latin) giving the dish its name. A good paellero (that’s a paella cook) knows how to time the cooking of the rice perfectly, removing it from the heat at just the right time when all the moisture has been absorbed and the underside has become brown and a little crunchy. ",
+        "image": "https://media.istockphoto.com/id/614873048/photo/paella-on-a-table.jpg?b=1&s=170667a&w=0&k=20&c=AkdM-QDePq-js116MSLE-zlbXWB0ZfKIZZ8DDwyV04I="
+    },
+    {
+        "name": "Mercimek corbasi",
+        "price": "32",
+        "total_ordered": 58,
+        "rating": {
+            "number": 4.8,
+            "badge": "Excellent"
+        },
+        "details": "Mercimek corbasi is a Turkish lentil soup, of Southeast Anatolian origin. In addition to red lentils, the soup contains carrot, potato, onion and typical Turkish seasonings such as tomato puree, paprika and dried mint. The dish is loved throughout the country and is eaten as breakfast, lunch and starter.Mercimek corbasi (or mercimek çorbasi, pronounced: “MER-dzee-mek kor-bah-dzee”) is a lentil soup from Turkish cuisine, of Southeast Anatolian origin. In addition to red lentils (kirmizi mercimek), the soup contains carrot, potato, onion and Turkish seasonings such as tomato salca (tomato paste), paprika powder and dried mint.The dish is loved throughout the country and is eaten as breakfast (kahvalti), lunch and starter. It is particularly popular in the holy month of Ramadan, when the soup is eaten during iftar, the first meal served after sunset to break the daily fast. Outside Turkey, mercimek corbasi is a popular item on the menu. You can find it in small Turkish snack bars and fancy restaurants.",
+        "image": "https://media.istockphoto.com/id/837742356/photo/turkish-lepe-soup-in-a-wooden-bowl.jpg?b=1&s=170667a&w=0&k=20&c=vGxYprcsZCetJvFNywByD07mtkTuXaqf0PXN8l8V9bM="
+    },
+    {
+        "name": "Doner kebab",
+        "price": "16",
+        "total_ordered": 588,
+        "rating": {
+            "number": 5,
+            "badge": "Excellent"
+        },
+        "details": "Doner kebabs are made from slices of marinated meat, which are placed on a large skewer and roasted while rotating. The cooked meat is then served in thin slices on open pita bread with onion, lettuce, tomato and yoghurt sauce.Doner kebab (Turkish spelling: doner kebabi, pronounced “dohnr-k-bha-b”) means rotating roasted meat. Slices of marinated meat are skewered onto a large roller, and then grilled as it rotates. Traditionally, lamb is used, though veal, beef or poultry can also be used, especially outside of Turkey.When the roasted meat is placed into a split pita bread, it is called a doner kebab or doner sandwich. If the meat is rolled into a yufka, a thinner flatbread, the dish is called durum doner or yufka doner.",
+        "image": "https://media.istockphoto.com/id/499844279/photo/cook-preparing-a-turkish-doner-kebab.jpg?b=1&s=170667a&w=0&k=20&c=dI29_c_GedZ44eNCTUItiGxutyjyEqR25NM0hWFokrc="
+    },
+    {
+        "name": "Pad thai",
+        "price": "18",
+        "total_ordered": 368,
+        "rating": {
+            "number": 4.5,
+            "badge": "Excellent"
+        },
+        "details": "Pad Thai literally means Thai stir-fry and is a stir-fried rice noodle dish with sweet and sour sauce, egg, vegetables and meat, fish or tofu. You can also add peanuts, sugar, chilli powder and chilli peppers in vinegar and fish sauce to personalise the noodles.Pad thai (pronounced “paht thai”) literally means “Thai stir-fry”. It is a rice dish where the noodles are stir-fried with a sweet and sour sauce, egg, vegetables and meat, fish or tofu. You also get chopped peanuts, sugar, chilli powder, chilli peppers in vinegar and fish sauce to personalise the noodles. A good pad thai has the golden combination of sweet, sour, salty and spicy without any of these flavours dominating.As the most famous dish from Thai cuisine, pad thai is on the menu of – almost literally – every Thai restaurant in the world. It is even available as a microwave meal in some countries.",
+        "image": "https://media.istockphoto.com/id/1315471497/photo/bowls-of-chicken-pad-thai.jpg?b=1&s=170667a&w=0&k=20&c=vlgmQNy7st2NWL40yAsAXzGYEwTyPOkfAXyciHALY4M="
+    }
+]
