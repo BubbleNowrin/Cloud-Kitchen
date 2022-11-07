@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Coupon = () => {
     return (
-        <div className="p-6 py-12 bg-lime-300 my-20">
+        <div className="p-6 py-12 bg-lime-300 mt-20">
             <div className="container mx-auto">
                 <div className="flex flex-col lg:flex-row items-center justify-between">
                     <h2 className="text-center text-lime-800 text-6xl tracking-tighter font-bold">Up to

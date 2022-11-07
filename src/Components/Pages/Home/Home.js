@@ -10,6 +10,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import FoodCard from './FoodCard';
 import Steps from './Steps';
 import Coupon from './Coupon';
+import Subscribe from './Subscribe';
 
 
 const Home = () => {
@@ -126,6 +127,7 @@ const Home = () => {
             </div>
             <Steps></Steps>
             <Coupon></Coupon>
+            <Subscribe></Subscribe>
         </div>
     );
 };
