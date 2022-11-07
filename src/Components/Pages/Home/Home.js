@@ -8,6 +8,7 @@ import fish from "../../../Assets/images/carouselImages/fish.jpg";
 import pizza2 from "../../../Assets/images/carouselImages/pizza.jpg";
 import { Link, useLoaderData } from 'react-router-dom';
 import FoodCard from './FoodCard';
+import Steps from './Steps';
 
 
 const Home = () => {
@@ -122,6 +123,7 @@ const Home = () => {
                     </span>
                 </Link>
             </div>
+            <Steps></Steps>
         </div>
     );
 };
