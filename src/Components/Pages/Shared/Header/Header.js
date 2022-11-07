@@ -11,12 +11,12 @@ const Header = () => {
                     <Link
                         to="/"
                         aria-label="Company"
-                        title="Bhojon Roshik"
+                        title="Foodaholic"
                         className="inline-flex items-center"
                     >
                         <img className="w-8 lg:w-14 text-teal-accent-400" src={logo} alt="" />
                         <span className="ml-2 text-xl font-bold tracking-wide text-lime-500 uppercase">
-                            Bhojon Roshik
+                            Foodaholic
                         </span>
                     </Link>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -114,12 +114,12 @@ const Header = () => {
                                             <Link
                                                 to="/"
                                                 aria-label="Company"
-                                                title="Bhojon Roshik"
+                                                title="Foodaholic"
                                                 className="inline-flex items-center"
                                             >
                                                 <img className="w-8 lg:w-14 text-deep-purple-accent-400" src={logo} alt="" />
                                                 <span className="ml-2 text-xl font-bold tracking-wide text-lime-500 uppercase">
-                                                    Bhojon Roshik
+                                                    Foodaholic
                                                 </span>
                                             </Link>
                                         </div>
