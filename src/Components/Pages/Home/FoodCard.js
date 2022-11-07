@@ -12,20 +12,20 @@ const FoodCard = ({ food }) => {
                 <p className='text-md'>{details.length > 100 ? details.slice(0, 100) + "..." : details}</p>
                 <p className="text-3xl text-lime-100">Price:${price}</p>
                 <div>
-                    <a
-                        class="group relative inline-block focus:outline-none focus:ring"
-                        href="/download"
+                    <Link
+                        className="group relative inline-block focus:outline-none focus:ring"
+                        to="/download"
                     >
                         <span
-                            class="absolute inset-0 translate-x-0 translate-y-0 bg-lime-500 transition-transform group-hover:translate-y-1.5 group-hover:translate-x-1.5"
+                            className="absolute inset-0 translate-x-0 translate-y-0 bg-lime-500 transition-transform group-hover:translate-y-1.5 group-hover:translate-x-1.5"
                         ></span>
 
                         <span
-                            class="relative inline-block border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest"
+                            className="relative inline-block border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest"
                         >
                             Details
                         </span>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
