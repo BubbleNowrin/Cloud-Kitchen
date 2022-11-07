@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const FoodCard = ({ food }) => {
 
-    const { image, name, details, price } = food;
+    const { image, name, details, price, _id } = food;
     return (
         <div className="card lg:w-96 bg-base-100 shadow-xl image-full mx-auto">
             <figure><img src={image} alt="Shoes" /></figure>
@@ -14,7 +14,7 @@ const FoodCard = ({ food }) => {
                 <div>
                     <Link
                         className="group relative inline-block focus:outline-none focus:ring"
-                        to="/details"
+                        to={`/details/${_id}`}
                     >
                         <span
                             className="absolute inset-0 translate-x-0 translate-y-0 bg-lime-500 transition-transform group-hover:translate-y-1.5 group-hover:translate-x-1.5"

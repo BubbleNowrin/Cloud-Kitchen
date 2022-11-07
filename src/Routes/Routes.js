@@ -4,6 +4,7 @@ import Blogs from "../Components/Pages/Blogs/Blogs";
 import ErrorPage from "../Components/Pages/ErrorPage/ErrorPage";
 import Home from "../Components/Pages/Home/Home";
 import Reviews from "../Components/Pages/Reviews/Reviews";
+import Details from "../Components/Pages/Services/Details";
 import Services from "../Components/Pages/Services/Services";
 import Main from "../Layouts/Main";
 
@@ -28,6 +29,11 @@ export const routes = createBrowserRouter([
                 path: '/services',
                 loader: () => fetch('http://localhost:5000/foods'),
                 element: <Services></Services>
+            },
+            {
+                path: '/details/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/foods/${params.id}`),
+                element: <Details></Details>
             },
             {
                 path: '/blogs',
