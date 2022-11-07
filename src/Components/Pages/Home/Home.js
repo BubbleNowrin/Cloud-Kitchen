@@ -9,6 +9,7 @@ import pizza2 from "../../../Assets/images/carouselImages/pizza.jpg";
 import { Link, useLoaderData } from 'react-router-dom';
 import FoodCard from './FoodCard';
 import Steps from './Steps';
+import Coupon from './Coupon';
 
 
 const Home = () => {
@@ -124,6 +125,7 @@ const Home = () => {
                 </Link>
             </div>
             <Steps></Steps>
+            <Coupon></Coupon>
         </div>
     );
 };
