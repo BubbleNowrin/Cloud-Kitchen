@@ -2,19 +2,19 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <div class="space-y-4 min-h-screen mb-40 mt-8">
-            <details class="group border-l-4 border-green-500 bg-lime-200 p-6" open>
-                <summary class="flex cursor-pointer items-center justify-between">
-                    <h2 class="text-lg font-medium text-gray-900">
+        <div className="space-y-4 min-h-screen mb-40 mt-8">
+            <details className="group border-l-4 border-green-500 bg-lime-200 p-6" open>
+                <summary className="flex cursor-pointer items-center justify-between">
+                    <h2 className="text-lg font-medium text-gray-900">
                         What are the differences between SQL and NoSQL?
                     </h2>
 
                     <span
-                        class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
+                        className="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            class="h-5 w-5 flex-shrink-0 transition duration-300 group-open:-rotate-45"
+                            className="h-5 w-5 flex-shrink-0 transition duration-300 group-open:-rotate-45"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                         >
@@ -27,7 +27,7 @@ const Blogs = () => {
                     </span>
                 </summary>
 
-                <p class="mt-4 leading-relaxed text-gray-700">
+                <p className="mt-4 leading-relaxed text-gray-700">
                     When choosing a modern database, one of the biggest decisions is picking a relational (SQL) or non-relational (NoSQL) data structure. While both are viable options, there are key differences between the two that users must keep in mind when making a decision.
 
                     The differences between SQL vs NoSQL are:
@@ -39,18 +39,18 @@ const Blogs = () => {
                     5.SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.
                 </p>
             </details>
-            <details class="group border-l-4 border-green-500 bg-lime-300 p-6" open>
-                <summary class="flex cursor-pointer items-center justify-between">
-                    <h2 class="text-lg font-medium text-gray-900">
+            <details className="group border-l-4 border-green-500 bg-lime-300 p-6" open>
+                <summary className="flex cursor-pointer items-center justify-between">
+                    <h2 className="text-lg font-medium text-gray-900">
                         What is JWT, and how does it work?
                     </h2>
 
                     <span
-                        class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
+                        className="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            class="h-5 w-5 flex-shrink-0 transition duration-300 group-open:-rotate-45"
+                            className="h-5 w-5 flex-shrink-0 transition duration-300 group-open:-rotate-45"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                         >
@@ -63,7 +63,7 @@ const Blogs = () => {
                     </span>
                 </summary>
 
-                <p class="mt-4 leading-relaxed text-gray-700">
+                <p className="mt-4 leading-relaxed text-gray-700">
                     JSON Web Token (JWT) is an open standard (RFC 7519) for securely transmitting information between parties as JSON object.
 
                     It is compact, readable and digitally signed using a private key/ or a public key pair by the Identity Provider(IdP). So the integrity and authenticity of the token can be verified by other parties involved.
@@ -77,17 +77,17 @@ const Blogs = () => {
                     4.Resource server then verifies the authenticity of the token using the secret salt/ public key.
                 </p>
             </details>
-            <details class="group border-l-4 border-green-500 bg-lime-200 p-6" open>
-                <summary class="flex cursor-pointer items-center justify-between">
-                    <h2 class="text-lg font-medium text-gray-900">
+            <details className="group border-l-4 border-green-500 bg-lime-200 p-6" open>
+                <summary className="flex cursor-pointer items-center justify-between">
+                    <h2 className="text-lg font-medium text-gray-900">
                         What is the difference between javascript and NodeJS?</h2>
 
                     <span
-                        class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
+                        className="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            class="h-5 w-5 flex-shrink-0 transition duration-300 group-open:-rotate-45"
+                            className="h-5 w-5 flex-shrink-0 transition duration-300 group-open:-rotate-45"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                         >
@@ -100,24 +100,24 @@ const Blogs = () => {
                     </span>
                 </summary>
 
-                <p class="mt-4 leading-relaxed text-gray-700">
+                <p className="mt-4 leading-relaxed text-gray-700">
                     1. JavaScript is a client-side scripting language that is lightweight, cross-platform, and interpreted. Both Java and HTML include it. Node.js, on the other hand, is a V8-based server-side programming language.
                     2. JavaScript is a simple programming language that can be used with any browser that has the JavaScript Engine installed. Node.js, on the other hand, is an interpreter or execution environment for the JavaScript programming language. 3. Any engine may run JavaScript. As a result, writing JavaScript is incredibly easy, and any working environment is similar to a complete browser. Node.js, on the other hand, only enables the V8 engine. 4.JavaScript is the most commonly used on client-side servers.	Node.js is mainly popular on the server-side.5.JavaScript is a new release of the ECMA script that works on the C++-based V8 engine. In Node.js,C++, C, and JavaScript are used.
                 </p>
             </details>
 
-            <details class="group border-l-4 border-green-500 bg-lime-300 p-6">
-                <summary class="flex cursor-pointer items-center justify-between">
-                    <h2 class="text-lg font-medium text-gray-900">
+            <details className="group border-l-4 border-green-500 bg-lime-300 p-6">
+                <summary className="flex cursor-pointer items-center justify-between">
+                    <h2 className="text-lg font-medium text-gray-900">
                         How does NodeJS handle multiple requests at the same time?
                     </h2>
 
                     <span
-                        class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
+                        className="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            class="h-5 w-5 flex-shrink-0 transition duration-300 group-open:-rotate-45"
+                            className="h-5 w-5 flex-shrink-0 transition duration-300 group-open:-rotate-45"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                         >
@@ -130,7 +130,7 @@ const Blogs = () => {
                     </span>
                 </summary>
 
-                <p class="mt-4 leading-relaxed text-gray-700">
+                <p className="mt-4 leading-relaxed text-gray-700">
                     NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them. EventLoop is the listener for the EventQueue.
 
                     If NodeJS can process the request without I/O blocking then the event loop would itself process the request and sends the response back to the client by itself. But, it is possible to process multiple requests parallelly using the NodeJS cluster module or worker_threads module.
