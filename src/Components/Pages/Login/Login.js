@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import image from '../../../Assets/images/gif/120735-fast-food.gif'
-import logo from '../../../Assets/Logo/logo.png'
+import image from '../../../Assets/images/gif/120735-fast-food.gif';
+import logo from '../../../Assets/Logo/logo.png';
 
 const Login = () => {
     return (
@@ -97,12 +97,12 @@ const Login = () => {
                             </div>
                             <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
 
-                                <Link
+                                <button
                                     className="inline-block rounded bg-lime-600 px-8 py-3 text-sm font-medium text-white transition hover:-rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-lime-500"
-                                    href="/download"
+
                                 >
                                     Log In
-                                </Link>
+                                </button>
 
                                 <p className="mt-4 text-sm text-gray-500 sm:mt-0">
                                     Don't have an account?
@@ -121,7 +121,7 @@ const Login = () => {
                                 >
                                     Facebook
                                     <svg
-                                        class="ml-2 h-5 w-5"
+                                        className="ml-2 h-5 w-5"
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
                                         aria-hidden="true"
