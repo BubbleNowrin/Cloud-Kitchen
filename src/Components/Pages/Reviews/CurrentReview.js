@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const CurrentReview = ({ rvw, handleDeleteReview }) => {
     // console.log(rvw);
     const { name, review, serviceImage, serviceName, servicePrice, _id } = rvw;
+    const { user } = useContext(AuthContext);
 
     return (
+
         <tr>
 
             <td>
@@ -33,6 +36,7 @@ const CurrentReview = ({ rvw, handleDeleteReview }) => {
                 </label>
             </th>
         </tr>
+
     );
 };
 
