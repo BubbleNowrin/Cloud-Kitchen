@@ -75,18 +75,7 @@ const Login = () => {
                         </h1>
 
                         <form onSubmit={handleLogin} className="mt-8 grid grid-cols-6 gap-6">
-                            <div className="col-span-6">
-                                <label htmlFor="Name" className="block text-sm font-medium text-gray-700">
-                                    User Name
-                                </label>
 
-                                <input
-                                    type="text"
-                                    id="Name"
-                                    name="name"
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                                />
-                            </div>
                             <div className="col-span-6">
                                 <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
                                     Email

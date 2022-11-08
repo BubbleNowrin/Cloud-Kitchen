@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../../../Assets/Logo/logo.png";
+import { AuthContext } from '../../../../Contexts/AuthProvider';
 
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(err => console.error(err))
+    }
     return (
         <div className="bg-lime-100">
             <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -51,39 +60,60 @@ const Header = () => {
                             </Link>
                         </li>
 
-                        <li>
-                            <Link
-                                to="/reviews"
-                                aria-label="About us"
-                                title="Reviews"
-                                className="font-medium tracking-wide text-lime-500  transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                My Reviews
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/add"
-                                aria-label="About us"
-                                title="Add Service"
-                                className="font-medium tracking-wide text-lime-500  transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Add Service
-                            </Link>
-                        </li>
+                        {
+                            (user?.email ?
+                                <>
+                                    <li>
+                                        <Link
+                                            to="/reviews"
+                                            aria-label="About us"
+                                            title="Reviews"
+                                            className="font-medium tracking-wide text-lime-500  transition-colors duration-200 hover:text-teal-accent-400"
+                                        >
+                                            My Reviews
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            to="/add"
+                                            aria-label="About us"
+                                            title="Add Service"
+                                            className="font-medium tracking-wide text-lime-500  transition-colors duration-200 hover:text-teal-accent-400"
+                                        >
+                                            Add Service
+                                        </Link>
+                                    </li>
+                                    <ul className="flex items-center hidden space-x-8 lg:flex">
+                                        <li>
+                                            <button
+                                                onClick={handleLogOut}
+                                                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-lime-500  transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                                aria-label="Sign up"
+                                                title="Log out"
+                                            >
+                                                Log out
+                                            </button>
+                                        </li>
+                                    </ul>
+
+                                </>
+                                :
+                                <ul className="flex items-center hidden space-x-8 lg:flex">
+                                    <li>
+                                        <Link
+                                            to="/login"
+                                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-lime-500  transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                            aria-label="Sign up"
+                                            title="Log In"
+                                        >
+                                            Log In
+                                        </Link>
+                                    </li>
+                                </ul>
+                            )
+                        }
                     </ul>
-                    <ul className="flex items-center hidden space-x-8 lg:flex">
-                        <li>
-                            <Link
-                                to="/login"
-                                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-lime-500  transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                aria-label="Sign up"
-                                title="Log In"
-                            >
-                                Log In
-                            </Link>
-                        </li>
-                    </ul>
+
                     <div className="lg:hidden">
                         <button
                             aria-label="Open Menu"
