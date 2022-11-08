@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import image from '../../../Assets/images/gif/120735-fast-food.gif';
 import logo from '../../../Assets/Logo/logo.png';
+import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const Login = () => {
+
+    const { signIn } = useContext(AuthContext);
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const confirm = form.password_confirmation.value;
+        if (password !== confirm) {
+            return console.log('password did not match');
+        }
+        // console.log(name, email, password);
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                form.reset();
+                console.log(user);
+            })
+            .catch(error => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorMessage);
+            })
+    }
+
     return (
 
         <section className="bg-lime-200 mb-20 mt-10">
@@ -35,7 +63,7 @@ const Login = () => {
                             Welcome to Foodaholic. <br /> Login here!
                         </h1>
 
-                        <form action="#" className="mt-8 grid grid-cols-6 gap-6">
+                        <form onSubmit={handleLogin} className="mt-8 grid grid-cols-6 gap-6">
                             <div className="col-span-6">
                                 <label htmlFor="Name" className="block text-sm font-medium text-gray-700">
                                     User Name

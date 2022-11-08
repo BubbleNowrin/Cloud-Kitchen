@@ -8,7 +8,7 @@ const SignUp = () => {
 
     const { createUser } = useContext(AuthContext);
 
-    const handleOnSubmit = (event) => {
+    const handleSignUp = (event) => {
 
         event.preventDefault();
         const form = event.target;
@@ -60,7 +60,7 @@ const SignUp = () => {
                             Welcome to Foodaholic. <br /> Sign Up here!
                         </h1>
 
-                        <form onSubmit={handleOnSubmit} className="mt-8 grid grid-cols-6 gap-6">
+                        <form onSubmit={handleSignUp} className="mt-8 grid grid-cols-6 gap-6">
                             <div className="col-span-6">
                                 <label htmlFor="Name" className="block text-sm font-medium text-gray-700">
                                     User Name
