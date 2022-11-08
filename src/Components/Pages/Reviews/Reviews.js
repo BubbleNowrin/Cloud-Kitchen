@@ -10,7 +10,7 @@ const Reviews = () => {
 
     useEffect(() => {
         const url = `http://localhost:5000/reviews?email=${user?.email}`
-        console.log(url);
+        // console.log(url);
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -55,6 +55,11 @@ const Reviews = () => {
                                         <th>
                                             <label>
                                                 <p>Delete</p>
+                                            </label>
+                                        </th>
+                                        <th>
+                                            <label>
+                                                <p>Update</p>
                                             </label>
                                         </th>
                                     </tr>
