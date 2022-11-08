@@ -1,9 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logGif from '../../../Assets/images/gif/124956-login.gif';
 import logo from '../../../Assets/Logo/logo.png';
+import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const SignUp = () => {
+
+    const { createUser } = useContext(AuthContext);
+
+    const handleOnSubmit = (event) => {
+
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        // console.log(name, email, password);
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                form.reset();
+                console.log(user);
+            })
+            .catch(error => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorMessage);
+            })
+    }
+
     return (
         <section className="bg-lime-200 mt-10 mb-20">
             <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
@@ -35,9 +60,9 @@ const SignUp = () => {
                             Welcome to Foodaholic. <br /> Sign Up here!
                         </h1>
 
-                        <form action="#" className="mt-8 grid grid-cols-6 gap-6">
+                        <form onSubmit={handleOnSubmit} className="mt-8 grid grid-cols-6 gap-6">
                             <div className="col-span-6">
-                                <label for="Name" className="block text-sm font-medium text-gray-700">
+                                <label htmlFor="Name" className="block text-sm font-medium text-gray-700">
                                     User Name
                                 </label>
 
@@ -49,7 +74,7 @@ const SignUp = () => {
                                 />
                             </div>
                             <div className="col-span-6">
-                                <label for="Email" className="block text-sm font-medium text-gray-700">
+                                <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
                                     Email
                                 </label>
 
@@ -64,7 +89,7 @@ const SignUp = () => {
 
                             <div className="col-span-6 sm:col-span-3">
                                 <label
-                                    for="Password"
+                                    htmlFor="Password"
                                     className="block text-sm font-medium text-gray-700"
                                 >
                                     Password
@@ -81,7 +106,7 @@ const SignUp = () => {
 
                             <div className="col-span-6 sm:col-span-3">
                                 <label
-                                    for="PasswordConfirmation"
+                                    htmlFor="PasswordConfirmation"
                                     className="block text-sm font-medium text-gray-700"
                                 >
                                     Password Confirmation

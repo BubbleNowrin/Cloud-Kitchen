@@ -37,7 +37,7 @@ const Login = () => {
 
                         <form action="#" className="mt-8 grid grid-cols-6 gap-6">
                             <div className="col-span-6">
-                                <label for="Name" className="block text-sm font-medium text-gray-700">
+                                <label htmlFor="Name" className="block text-sm font-medium text-gray-700">
                                     User Name
                                 </label>
 
@@ -49,7 +49,7 @@ const Login = () => {
                                 />
                             </div>
                             <div className="col-span-6">
-                                <label for="Email" className="block text-sm font-medium text-gray-700">
+                                <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
                                     Email
                                 </label>
 
@@ -64,7 +64,7 @@ const Login = () => {
 
                             <div className="col-span-6 sm:col-span-3">
                                 <label
-                                    for="Password"
+                                    htmlFor="Password"
                                     className="block text-sm font-medium text-gray-700"
                                 >
                                     Password
@@ -81,7 +81,7 @@ const Login = () => {
 
                             <div className="col-span-6 sm:col-span-3">
                                 <label
-                                    for="PasswordConfirmation"
+                                    htmlFor="PasswordConfirmation"
                                     className="block text-sm font-medium text-gray-700"
                                 >
                                     Password Confirmation
@@ -119,18 +119,7 @@ const Login = () => {
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    Facebook
-                                    <svg
-                                        className="ml-2 h-5 w-5"
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24"
-                                        aria-hidden="true"
-                                    >
-                                        <path fill="none" d="M0 0h24v24H0z" />
-                                        <path
-                                            d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"
-                                        />
-                                    </svg>
+                                    Google
                                 </button>
                             </div>
                         </form>
