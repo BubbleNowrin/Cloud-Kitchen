@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ServiceCard = ({ food }) => {
-    const { image, name, details, price, _id } = food;
+    const { image, foodName, details, price, _id } = food;
     return (
         <div className={'mx-auto max-w-xs rounded-md shadow-md bg-lime-200 dark:text-gray-100'}>
             <PhotoProvider>
@@ -14,7 +14,7 @@ const ServiceCard = ({ food }) => {
             </PhotoProvider>
             <div className="flex flex-col justify-between p-6 space-y-8">
                 <div className="space-y-6">
-                    <h2 className="text-3xl font-semibold tracking-wide">{name}</h2>
+                    <h2 className="text-3xl font-semibold tracking-wide">{foodName}</h2>
                     <p className="dark:text-gray-100">{details.length > 100 ? details.slice(0, 100) + '...' : details}</p>
                     <p className='text-xl font-bold'>Price: ${price}</p>
                 </div>

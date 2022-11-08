@@ -3,12 +3,12 @@ import CustomerReviews from './CustomerReviews';
 
 const ServiceDetails = ({ food, setReviews, reviews }) => {
 
-    const { image, name, details, price, _id } = food;
+    const { image, foodName, details, price, _id } = food;
     return (
         <div>
             <div>
                 <div className="space-y-2 text-center my-8">
-                    <h2 className="text-5xl font-bold text-gray-700">Details of <span className="text-5xl font-bold text-lime-500">{name}</span></h2>
+                    <h2 className="text-5xl font-bold text-gray-700">Details of <span className="text-5xl font-bold text-lime-500">{foodName}</span></h2>
                     <p className="font-serif text-md text-lime-700">This Cuisine is the most sold item of our kitchen. Check it Out!</p>
                 </div>
                 <section className="p-4 lg:p-8 bg-lime-200 text-gray-700">
@@ -17,7 +17,7 @@ const ServiceDetails = ({ food, setReviews, reviews }) => {
                         <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse">
                             <img src={image} alt="" className="h-80 my-auto dark:bg-gray-500 aspect-video" />
                             <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
-                                <span className="text-xs uppercase dark:text-gray-400">{name}</span>
+                                <span className="text-xs uppercase dark:text-gray-400">{foodName}</span>
                                 <h3 className="text-3xl font-bold">Price: ${price}</h3>
                                 <p className="my-6 dark:text-gray-400">{details}</p>
                             </div>

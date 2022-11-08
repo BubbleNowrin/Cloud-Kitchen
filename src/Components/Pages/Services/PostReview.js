@@ -4,7 +4,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const PostReview = ({ food, setReviews }) => {
 
-    const { _id } = food;
+    const { _id, image, foodName, price } = food;
     const { user } = useContext(AuthContext);
 
     const name = user?.displayName;
@@ -20,6 +20,9 @@ const PostReview = ({ food, setReviews }) => {
             name,
             serviceId: _id,
             photoURL,
+            serviceName: foodName,
+            serviceImage: image,
+            servicePrice: price,
             email
         }
         fetch(`http://localhost:5000/reviews/${_id}`, {
