@@ -10,12 +10,12 @@ const Reviews = () => {
 
     useEffect(() => {
         const url = `http://localhost:5000/reviews?email=${user?.email}`
-        // console.log(url);
+
         fetch(url)
             .then(res => res.json())
             .then(data => {
                 setCurrentUserReview(data);
-                // console.log(data);
+
             })
     }, [user?.email])
 
@@ -66,7 +66,7 @@ const Reviews = () => {
                                 </thead>
                                 <tbody>
                                     {
-                                        currentUserReview.map(rvw => <CurrentReview key={rvw._id} rvw={rvw} handleDeleteReview={handleDeleteReview}></CurrentReview>)
+                                        currentUserReview.map(rvw => <CurrentReview key={rvw._id} rvw={rvw} handleDeleteReview={handleDeleteReview} setCurrentUserReview={setCurrentUserReview}></CurrentReview>)
                                     }
 
                                 </tbody>

@@ -2,10 +2,9 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
-const CurrentReview = ({ rvw, handleDeleteReview }) => {
+const CurrentReview = ({ rvw, handleDeleteReview, setCurrentUserReview }) => {
     // console.log(rvw);
     const { name, review, serviceImage, serviceName, servicePrice, _id } = rvw;
-    const { user } = useContext(AuthContext);
 
     return (
 
