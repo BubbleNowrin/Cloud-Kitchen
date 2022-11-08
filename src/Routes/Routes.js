@@ -5,6 +5,7 @@ import ErrorPage from "../Components/Pages/ErrorPage/ErrorPage";
 import Home from "../Components/Pages/Home/Home";
 import Login from "../Components/Pages/Login/Login";
 import Reviews from "../Components/Pages/Reviews/Reviews";
+import CustomerReviews from "../Components/Pages/Services/CustomerReviews";
 import Details from "../Components/Pages/Services/Details";
 import Services from "../Components/Pages/Services/Services";
 import SignUp from "../Components/Pages/SignUp/SignUp";
@@ -43,7 +44,8 @@ export const routes = createBrowserRouter([
                 element: <Blogs></Blogs>
             },
             {
-                path: '/reviews',
+                path: '/reviews/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`),
                 element: <PrivateRoutes><Reviews></Reviews></PrivateRoutes>
             },
             {
@@ -57,7 +59,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/add',
                 element: <PrivateRoutes><AddService></AddService></PrivateRoutes>
-            }
+            },
         ]
     }
 ])

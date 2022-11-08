@@ -83,6 +83,16 @@ const Header = () => {
                                             Add Service
                                         </Link>
                                     </li>
+                                    <li>
+                                        <p
+
+                                            aria-label="About us"
+                                            title={user.displayName}
+                                            className="font-medium tracking-wide text-lime-500  transition-colors duration-200 hover:text-teal-accent-400"
+                                        >
+                                            <img style={{ height: '30px' }} className='rounded-full' src={user.photoURL} alt="" />
+                                        </p>
+                                    </li>
                                     <ul className="flex items-center hidden space-x-8 lg:flex">
                                         <li>
                                             <button

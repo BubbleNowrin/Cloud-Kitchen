@@ -6,13 +6,14 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const SignUp = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
 
     const handleSignUp = (event) => {
 
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
         // console.log(name, email, password);
@@ -20,6 +21,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 form.reset();
+                handleUpdateUserProfile(name, photoURL);
                 console.log(user);
             })
             .catch(error => {
@@ -27,6 +29,16 @@ const SignUp = () => {
                 const errorMessage = error.message;
                 console.log(errorMessage);
             })
+    }
+
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        };
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(err => console.log(err))
     }
 
     return (
@@ -71,6 +83,20 @@ const SignUp = () => {
                                     id="Name"
                                     name="name"
                                     className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    required
+                                />
+                            </div>
+                            <div className="col-span-6">
+                                <label htmlFor="Photo" className="block text-sm font-medium text-gray-700">
+                                    Photo URL
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="Photo"
+                                    name="photoURL"
+                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    required
                                 />
                             </div>
                             <div className="col-span-6">
