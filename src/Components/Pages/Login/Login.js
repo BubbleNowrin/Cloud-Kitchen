@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import image from '../../../Assets/images/gif/120735-fast-food.gif';
@@ -6,7 +7,8 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const Login = () => {
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleLogin } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -14,15 +16,24 @@ const Login = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        const confirm = form.password_confirmation.value;
-        if (password !== confirm) {
-            return console.log('password did not match');
-        }
         // console.log(name, email, password);
         signIn(email, password)
             .then(result => {
                 const user = result.user;
                 form.reset();
+                console.log(user);
+            })
+            .catch(error => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorMessage);
+            })
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
                 console.log(user);
             })
             .catch(error => {
@@ -90,11 +101,8 @@ const Login = () => {
                                 />
                             </div>
 
-                            <div className="col-span-6 sm:col-span-3">
-                                <label
-                                    htmlFor="Password"
-                                    className="block text-sm font-medium text-gray-700"
-                                >
+                            <div className="col-span-6">
+                                <label htmlFor="Password" className="block text-sm font-medium text-gray-700">
                                     Password
                                 </label>
 
@@ -107,22 +115,6 @@ const Login = () => {
                                 />
                             </div>
 
-                            <div className="col-span-6 sm:col-span-3">
-                                <label
-                                    htmlFor="PasswordConfirmation"
-                                    className="block text-sm font-medium text-gray-700"
-                                >
-                                    Password Confirmation
-                                </label>
-
-                                <input
-                                    type="password"
-                                    id="PasswordConfirmation"
-                                    name="password_confirmation"
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                                    required
-                                />
-                            </div>
                             <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
 
                                 <button
@@ -138,19 +130,19 @@ const Login = () => {
                                 </p>
 
                             </div>
-                            <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-                                <p className="mt-4 text-sm text-gray-500 sm:mt-0">
-                                    Login with Socials?
-                                </p>
-                                <button
-                                    className="inline-flex items-center rounded border-2 bg-lime-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-transparent hover:text-lime-700 focus:outline-none focus:ring active:opacity-75"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    Google
-                                </button>
-                            </div>
                         </form>
+                        <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
+                            <p className="mt-4 text-sm text-gray-500 sm:mt-0">
+                                Login with Socials?
+                            </p>
+                            <button onClick={handleGoogleLogin}
+                                className="inline-flex items-center rounded border-2 bg-lime-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-transparent hover:text-lime-700 focus:outline-none focus:ring active:opacity-75"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                Google
+                            </button>
+                        </div>
                     </div>
                 </main>
             </div>

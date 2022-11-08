@@ -87,11 +87,8 @@ const SignUp = () => {
                                 />
                             </div>
 
-                            <div className="col-span-6 sm:col-span-3">
-                                <label
-                                    htmlFor="Password"
-                                    className="block text-sm font-medium text-gray-700"
-                                >
+                            <div className="col-span-6">
+                                <label htmlFor="Password" className="block text-sm font-medium text-gray-700">
                                     Password
                                 </label>
 
@@ -104,22 +101,7 @@ const SignUp = () => {
                                 />
                             </div>
 
-                            <div className="col-span-6 sm:col-span-3">
-                                <label
-                                    htmlFor="PasswordConfirmation"
-                                    className="block text-sm font-medium text-gray-700"
-                                >
-                                    Password Confirmation
-                                </label>
 
-                                <input
-                                    type="password"
-                                    id="PasswordConfirmation"
-                                    name="password_confirmation"
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                                    required
-                                />
-                            </div>
                             <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
 
                                 <button
