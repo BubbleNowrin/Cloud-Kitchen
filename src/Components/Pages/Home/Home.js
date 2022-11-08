@@ -52,49 +52,49 @@ const Home = () => {
                 <div className="w-5/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-40 dark:bg-gray-500">
                     <div className="carousel w-full">
                         <div id="slide1" className="carousel-item relative w-full">
-                            <img src={burger} alt="" className="w-full h-96" />
+                            <img src={burger} alt="" className="w-full h-96 object-cover" />
                             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                 <a href="#slide4" className="btn glass btn-circle">❮</a>
                                 <a href="#slide2" className="btn glass btn-circle">❯</a>
                             </div>
                         </div>
                         <div id="slide2" className="carousel-item relative w-full">
-                            <img src={pizza} alt="" className="w-full h-96" />
+                            <img src={pizza} alt="" className="w-full h-96  object-cover" />
                             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                 <a href="#slide1" className="btn glass btn-circle">❮</a>
                                 <a href="#slide3" className="btn glass btn-circle">❯</a>
                             </div>
                         </div>
                         <div id="slide3" className="carousel-item relative w-full">
-                            <img src={pasta} alt="" className="w-full h-96" />
+                            <img src={pasta} alt="" className="w-full h-96  object-cover" />
                             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                 <a href="#slide2" className="btn glass btn-circle">❮</a>
                                 <a href="#slide4" className="btn glass btn-circle">❯</a>
                             </div>
                         </div>
                         <div id="slide4" className="carousel-item relative w-full">
-                            <img src={salad} alt="" className="w-full h-96" />
+                            <img src={salad} alt="" className="w-full h-96  object-cover" />
                             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                 <a href="#slide3" className="btn glass btn-circle">❮</a>
                                 <a href="#slide5" className="btn glass btn-circle">❯</a>
                             </div>
                         </div>
                         <div id="slide5" className="carousel-item relative w-full">
-                            <img src={steak} alt="" className="w-full h-96" />
+                            <img src={steak} alt="" className="w-full h-96  object-cover" />
                             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                 <a href="#slide4" className="btn glass btn-circle">❮</a>
                                 <a href="#slide6" className="btn glass btn-circle">❯</a>
                             </div>
                         </div>
                         <div id="slide6" className="carousel-item relative w-full">
-                            <img src={fish} alt="" className="w-full h-96" />
+                            <img src={fish} alt="" className="w-full h-96  object-cover" />
                             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                 <a href="#slide5" className="btn glass btn-circle">❮</a>
                                 <a href="#slide7" className="btn glass btn-circle">❯</a>
                             </div>
                         </div>
                         <div id="slide7" className="carousel-item relative w-full">
-                            <img src={pizza2} alt="" className="w-full h-96" />
+                            <img src={pizza2} alt="" className="w-full h-96  object-cover" />
                             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                 <a href="#slide6" className="btn glass btn-circle">❮</a>
                                 <a href="#slide1" className="btn glass btn-circle">❯</a>

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import CustomerReviews from './CustomerReviews';
 
-const ServiceDetails = ({ food }) => {
-    const [reviews, setReviews] = useState([]);
+const ServiceDetails = ({ food, setReviews, reviews }) => {
+
     const { image, name, details, price, _id } = food;
     return (
         <div>
@@ -26,17 +26,29 @@ const ServiceDetails = ({ food }) => {
                     </div>
                 </section>
             </div>
+            {
+                <div className="mx-auto max-w-xl text-center mt-20">
+                    <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-lime-500">
+                        Trusted Reviews from Our Customers
+                    </h2>
+
+                    <p className="text-lime-700 mx-auto mt-4 max-w-lg">
+                        Our customers are our secret ingredients to good food.
+                    </p>
+                </div>
+            }
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {
                     useEffect(() => {
                         fetch(`http://localhost:5000/reviews/${_id}`)
                             .then(res => res.json())
                             .then(data => setReviews(data))
-                    }, [_id])
+                    }, [_id, setReviews])
 
                 }
+
                 {
-                    reviews.map(rev => <CustomerReviews key={rev._id} rev={rev}></CustomerReviews>)
+                    reviews.map(rev => <CustomerReviews key={rev._id} rev={rev} ></CustomerReviews>)
                 }
 
             </div>

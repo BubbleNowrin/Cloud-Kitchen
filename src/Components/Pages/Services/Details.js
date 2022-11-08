@@ -1,9 +1,12 @@
 
+import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import PostReview from './PostReview';
 import ServiceDetails from './ServiceDetails';
 
 const Details = () => {
 
+    const [reviews, setReviews] = useState([]);
     const foodDetails = useLoaderData();
 
 
@@ -11,18 +14,15 @@ const Details = () => {
         <div className='my-8'>
 
             {
-                foodDetails.map(food => <ServiceDetails key={food._id} food={food}></ServiceDetails>)
+                foodDetails.map(food => <ServiceDetails key={food._id} food={food} setReviews={setReviews} reviews={reviews}></ServiceDetails>)
             }
+            <h1
+                className="my-6 text-2xl font-bold text-lime-500 sm:text-3xl md:text-4xl"
+            >
+                Post Review here!
+            </h1>
             {
-                <div class="mx-auto max-w-xl text-center mt-20">
-                    <h2 class="text-4xl font-bold tracking-tight sm:text-5xl text-lime-500">
-                        Trusted Reviews from Our Customers
-                    </h2>
-
-                    <p class="text-lime-700 mx-auto mt-4 max-w-lg">
-                        Our customers are our secret ingredients to good food.
-                    </p>
-                </div>
+                foodDetails.map(food => <PostReview key={food._id} food={food} setReviews={setReviews}></PostReview>)
             }
 
         </div>
