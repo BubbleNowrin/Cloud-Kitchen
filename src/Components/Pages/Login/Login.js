@@ -1,6 +1,6 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import image from '../../../Assets/images/gif/120735-fast-food.gif';
 import logo from '../../../Assets/Logo/logo.png';
 import { AuthContext } from '../../../Contexts/AuthProvider';
@@ -9,6 +9,11 @@ const Login = () => {
 
     const { signIn, googleLogin } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
+
+    const location = useLocation();
+    const Navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -21,6 +26,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 form.reset();
+                Navigate(from, { replace: true });
                 console.log(user);
             })
             .catch(error => {
@@ -34,6 +40,7 @@ const Login = () => {
         googleLogin(googleProvider)
             .then(result => {
                 const user = result.user;
+                Navigate(from, { replace: true });
                 console.log(user);
             })
             .catch(error => {
