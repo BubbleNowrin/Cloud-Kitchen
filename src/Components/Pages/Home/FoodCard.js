@@ -7,7 +7,7 @@ const FoodCard = ({ food }) => {
     const { image, foodName, details, price, _id } = food;
     return (
 
-        <div data-aos="fade-left"
+        <div data-aos="zoom-in-down"
             data-aos-duration="1000" className="group relative block bg-black">
 
             <img
@@ -33,6 +33,20 @@ const FoodCard = ({ food }) => {
                         <p className="text-sm text-white">
                             {details.length > 100 ? details.slice(0, 100) + "..." : details}
                         </p>
+                        <Link
+                            className="group relative inline-block overflow-hidden border border-lime-600 px-8 py-3 focus:outline-none focus:ring"
+                            to={`/details/${_id}`}
+                        >
+                            <span
+                                className="absolute inset-x-0 bottom-0 h-[2px] bg-lime-600 transition-all group-hover:h-full group-active:bg-lime-500"
+                            ></span>
+
+                            <span
+                                className="relative text-sm font-medium text-lime-600 transition-colors group-hover:text-white"
+                            >
+                                View Details
+                            </span>
+                        </Link>
                     </div>
                 </div>
             </div>

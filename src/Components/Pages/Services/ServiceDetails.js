@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import CustomerReviews from './CustomerReviews';
 
 const ServiceDetails = ({ food, setReviews, reviews }) => {
 
     const { image, foodName, details, price, _id } = food;
+
     return (
         <div>
             <div>
@@ -42,7 +43,9 @@ const ServiceDetails = ({ food, setReviews, reviews }) => {
                     useEffect(() => {
                         fetch(`https://cloud-kitchen-server-sepia.vercel.app/reviews/${_id}`)
                             .then(res => res.json())
-                            .then(data => setReviews(data))
+                            .then(data => {
+                                setReviews(data);
+                            })
                     }, [_id, setReviews])
 
                 }
@@ -54,6 +57,7 @@ const ServiceDetails = ({ food, setReviews, reviews }) => {
             </div>
         </div>
     );
+
 };
 
 export default ServiceDetails;

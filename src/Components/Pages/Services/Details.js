@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 import PostReview from './PostReview';
@@ -9,7 +9,6 @@ const Details = () => {
 
     const [reviews, setReviews] = useState([]);
     const foodDetails = useLoaderData();
-
 
     return (
         <div className='my-8'>

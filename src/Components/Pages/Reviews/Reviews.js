@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Reviews = () => {
 
     const [currentUserReview, setCurrentUserReview] = useState([]);
+    const [loading, setLoading] = useState(true);
     const { user, logOut } = useContext(AuthContext);
 
     //get the specific reviews by sending query
@@ -27,6 +28,7 @@ const Reviews = () => {
             })
             .then(data => {
                 setCurrentUserReview(data);
+                setLoading(false);
             })
     }, [user?.email, logOut])
 
@@ -65,6 +67,10 @@ const Reviews = () => {
     //toast
     const showToast = () => {
         toast.success("Deleted Successfully", { autoclose: 5000 });
+    }
+
+    if (loading) {
+        return <div className='h-[60vh] flex items-center'><div className="mx-auto w-16 h-16 border-4 border-dashed rounded-full animate-spin border-lime-700"></div></div>
     }
 
     return (

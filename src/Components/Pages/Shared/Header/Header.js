@@ -125,7 +125,7 @@ const Header = () => {
                         }
                     </ul>
 
-                    <div className="lg:hidden">
+                    <div className="lg:hidden z-10">
                         <button
                             aria-label="Open Menu"
                             title="Open Menu"
@@ -181,7 +181,7 @@ const Header = () => {
                                         </div>
                                     </div>
                                     <nav>
-                                        <ul className="space-y-4">
+                                        <ul className="space-y-4 z-10">
                                             <li>
                                                 <Link
                                                     to="/home"
@@ -212,36 +212,55 @@ const Header = () => {
                                                     Blogs
                                                 </Link>
                                             </li>
-                                            <li>
-                                                <Link
-                                                    to="/reviews"
-                                                    aria-label="About us"
-                                                    title="My Reviews"
-                                                    className="font-medium tracking-wide  text-lime-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                >
-                                                    My Reviews
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    to="/add"
-                                                    aria-label="About us"
-                                                    title="Add Services"
-                                                    className="font-medium tracking-wide  text-lime-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                >
-                                                    Add Services
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    to="/login"
-                                                    className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide  text-lime-500 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                                    aria-label="Sign up"
-                                                    title="Log In"
-                                                >
-                                                    Log In
-                                                </Link>
-                                            </li>
+                                            {
+                                                user?.email ?
+                                                    <>
+                                                        <li>
+                                                            <Link
+                                                                to="/reviews"
+                                                                aria-label="About us"
+                                                                title="My Reviews"
+                                                                className="font-medium tracking-wide  text-lime-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                            >
+                                                                My Reviews
+                                                            </Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link
+                                                                to="/add"
+                                                                aria-label="About us"
+                                                                title="Add Services"
+                                                                className="font-medium tracking-wide  text-lime-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                            >
+                                                                Add Services
+                                                            </Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link
+                                                                onClick={handleLogOut}
+                                                                className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide  text-lime-500 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                                                aria-label="Sign up"
+                                                                title="Log In"
+                                                            >
+                                                                Log Out
+                                                            </Link>
+                                                        </li>
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <li>
+                                                            <Link
+                                                                to="/login"
+                                                                className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide  text-lime-500 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                                                aria-label="Sign up"
+                                                                title="Log In"
+                                                            >
+                                                                Log In
+                                                            </Link>
+                                                        </li>
+                                                    </>
+                                            }
+
                                         </ul>
                                     </nav>
                                 </div>

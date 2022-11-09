@@ -6,14 +6,18 @@ import ServiceCard from './ServiceCard';
 
 const Services = () => {
     const [foods, setFoods] = useState([]);
-    const { loading, setLoading } = useContext(AuthContext);
+    // const { loading, setLoading } = useContext(AuthContext);
+    const [loading, setLoading] = useState(true);
 
     //load the services 
     useEffect(() => {
         fetch('https://cloud-kitchen-server-sepia.vercel.app/foods')
             .then(res => res.json())
-            .then(data => setFoods(data))
-        setLoading(false);
+            .then(data => {
+                setFoods(data);
+                setLoading(false);
+            })
+
     }, [setLoading])
 
     if (loading) {
