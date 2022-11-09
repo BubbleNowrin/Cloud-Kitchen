@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import CurrentReview from './CurrentReview';
 import nothing from "../../../Assets/images/gif/90988-no-results.gif";
+import { Helmet } from 'react-helmet-async';
 
 const Reviews = () => {
 
@@ -41,6 +42,9 @@ const Reviews = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>My Reviews</title>
+            </Helmet>
             {
                 currentUserReview.length > 0 ?
                     <>

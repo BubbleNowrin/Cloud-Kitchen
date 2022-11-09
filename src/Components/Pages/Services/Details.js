@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 import PostReview from './PostReview';
 import ServiceDetails from './ServiceDetails';
@@ -12,6 +13,9 @@ const Details = () => {
 
     return (
         <div className='my-8'>
+            <Helmet>
+                <title>Details</title>
+            </Helmet>
 
             {
                 foodDetails.map(food => <ServiceDetails key={food._id} food={food} setReviews={setReviews} reviews={reviews}></ServiceDetails>)

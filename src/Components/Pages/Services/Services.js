@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 import ServiceCard from './ServiceCard';
 
@@ -7,6 +8,9 @@ const Services = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Services</title>
+            </Helmet>
             <div className="space-y-2 text-center my-8">
                 <h2 className="text-5xl font-bold text-lime-500">Our Food Items</h2>
             </div>

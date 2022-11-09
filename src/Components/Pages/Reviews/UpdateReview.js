@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
@@ -46,6 +47,9 @@ const UpdateReview = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Update Review</title>
+            </Helmet>
 
             <div>
                 <section className="bg-white">

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import logGif from '../../../Assets/images/gif/124956-login.gif';
 import logo from '../../../Assets/Logo/logo.png';
@@ -43,6 +44,9 @@ const SignUp = () => {
 
     return (
         <section className="bg-lime-200 mt-10 mb-20">
+            <Helmet>
+                <title>SignUp</title>
+            </Helmet>
             <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
                 <section
                     className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6"

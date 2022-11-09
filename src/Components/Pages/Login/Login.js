@@ -1,5 +1,6 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import image from '../../../Assets/images/gif/120735-fast-food.gif';
 import logo from '../../../Assets/Logo/logo.png';
@@ -53,6 +54,9 @@ const Login = () => {
     return (
 
         <section className="bg-lime-200 mb-20 mt-10">
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
             <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
                 <aside
                     className="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6"

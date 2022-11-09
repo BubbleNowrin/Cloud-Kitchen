@@ -11,6 +11,7 @@ import FoodCard from './FoodCard';
 import Steps from './Steps';
 import Coupon from './Coupon';
 import Subscribe from './Subscribe';
+import { Helmet } from 'react-helmet-async';
 
 
 const Home = () => {
@@ -18,7 +19,11 @@ const Home = () => {
     const foods = useLoaderData();
 
     return (
+
         <div>
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
             <section>
                 <div className="dark:bg-violet-400">
                     <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 dark:text-gray-900">
