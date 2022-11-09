@@ -1,6 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import png from "../../../Assets/images/gif/Publish article-bro.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddService = () => {
 
@@ -33,11 +35,15 @@ const AddService = () => {
                 console.log(data)
                 form.reset();
                 if (data.acknowledged) {
-                    alert('service added successfully');
+                    showToast();
                 }
 
             })
 
+    }
+
+    const showToast = () => {
+        toast.success("Service Added Successfully", { autoclose: 5000 });
     }
     return (
 

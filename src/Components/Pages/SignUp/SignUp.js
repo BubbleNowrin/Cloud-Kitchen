@@ -5,6 +5,8 @@ import logGif from '../../../Assets/images/gif/124956-login.gif';
 import img from "../../../Assets/images/gif/Sign up-bro.png"
 import logo from '../../../Assets/Logo/logo.png';
 import { AuthContext } from '../../../Contexts/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
 
@@ -23,6 +25,9 @@ const SignUp = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
+                if (user) {
+                    showToast();
+                }
                 setLoader(false);
                 form.reset();
                 handleUpdateUserProfile(name, photoURL);
@@ -32,6 +37,9 @@ const SignUp = () => {
                 setLoader(false);
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                if (error) {
+                    showError(errorMessage)
+                }
                 console.log(errorMessage);
             })
     }
@@ -47,6 +55,14 @@ const SignUp = () => {
     }
     if (loader) {
         return <div className='h-[60vh] flex items-center'><div className="mx-auto w-16 h-16 border-4 border-dashed rounded-full animate-spin border-lime-700"></div></div>
+    }
+
+    const showToast = () => {
+        toast.success("Successfully Registered! Please log in", { autoclose: 5000 });
+    }
+
+    const showError = (err) => {
+        toast.error(err, { autoclose: 5000 })
     }
 
     return (

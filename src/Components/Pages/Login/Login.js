@@ -6,6 +6,8 @@ import gif from '../../../Assets/images/gif/120735-fast-food.gif';
 import image from "../../../Assets/images/gif/Computer login-bro.png";
 import logo from '../../../Assets/Logo/logo.png';
 import { AuthContext } from '../../../Contexts/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
@@ -29,6 +31,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
+                showToast();
                 const currentUser = {
                     email: user.email
                 }
@@ -56,6 +59,9 @@ const Login = () => {
                 setLoader(false);
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                if (error) {
+                    showError(errorMessage);
+                }
                 console.log(errorMessage);
             })
     }
@@ -65,6 +71,7 @@ const Login = () => {
         googleLogin(googleProvider)
             .then(result => {
                 const user = result.user;
+                showToast();
                 const currentUser = {
                     email: user.email
                 }
@@ -90,12 +97,22 @@ const Login = () => {
                 setLoader(false);
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                if (error) {
+                    showError(errorMessage);
+                }
                 console.log(errorMessage);
             })
     }
 
     if (loader) {
         return <div className='h-[60vh] flex items-center'><div className="mx-auto w-16 h-16 border-4 border-dashed rounded-full animate-spin border-lime-700"></div></div>
+    }
+    const showToast = () => {
+        toast.success("Successfully logged in", { autoclose: 5000 });
+    }
+
+    const showError = (err) => {
+        toast.error(err, { autoclose: 5000 })
     }
 
     return (

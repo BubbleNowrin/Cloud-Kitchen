@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import updatePng from "../../../Assets/images/gif/48218-update-color-flow.gif";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateReview = () => {
     const userReview = useLoaderData();
@@ -31,7 +33,7 @@ const UpdateReview = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    alert('updated successfully');
+                    showToast();
                     event.target.reset();
                     fetch(`http://localhost:5000/update/${reviews._id}`)
                         .then(res => res.json())
@@ -44,6 +46,10 @@ const UpdateReview = () => {
                         })
                 }
             })
+    }
+
+    const showToast = () => {
+        toast.success("Successfully Updated Review", { autoclose: 5000 });
     }
 
     return (

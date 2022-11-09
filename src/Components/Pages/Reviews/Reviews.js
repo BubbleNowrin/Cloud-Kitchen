@@ -3,6 +3,8 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 import CurrentReview from './CurrentReview';
 import nothing from "../../../Assets/images/gif/90988-no-results.gif";
 import { Helmet } from 'react-helmet-async';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Reviews = () => {
 
@@ -40,11 +42,15 @@ const Reviews = () => {
 
                         const remaining = currentUserReview.filter(cur => cur._id !== id);
                         setCurrentUserReview(remaining);
-                        alert('deleted successfully');
+                        showToast();
                     }
                 })
         }
 
+    }
+
+    const showToast = () => {
+        toast.success("Deleted Successfully", { autoclose: 5000 });
     }
 
     return (

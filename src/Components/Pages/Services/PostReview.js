@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const PostReview = ({ food, setReviews }) => {
 
@@ -38,7 +40,7 @@ const PostReview = ({ food, setReviews }) => {
             .then(data => {
                 console.log(data);
                 if (data.acknowledged) {
-                    alert('review posted successfully');
+                    showToast();
                     form.reset();
                     fetch(`http://localhost:5000/reviews/${_id}`)
                         .then(res => res.json())
@@ -46,6 +48,10 @@ const PostReview = ({ food, setReviews }) => {
                 }
             })
 
+    }
+
+    const showToast = () => {
+        toast.success("Successfully Posted Review", { autoclose: 5000 });
     }
     return (
         <div className="flex items-center justify-center text-center ">
