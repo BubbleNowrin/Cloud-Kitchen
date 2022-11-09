@@ -7,18 +7,25 @@ import { Helmet } from 'react-helmet-async';
 const Reviews = () => {
 
     const [currentUserReview, setCurrentUserReview] = useState([]);
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     useEffect(() => {
-        const url = `http://localhost:5000/reviews?email=${user?.email}`
 
-        fetch(url)
-            .then(res => res.json())
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+            headers: {
+                authorization: `bearer ${localStorage.getItem('token')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    return logOut();
+                }
+                return res.json()
+            })
             .then(data => {
                 setCurrentUserReview(data);
-
             })
-    }, [user?.email])
+    }, [user?.email, logOut])
 
     const handleDeleteReview = (id) => {
         const agree = window.confirm('Are you sure you want to delete the review?');
