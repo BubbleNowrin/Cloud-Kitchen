@@ -26,11 +26,17 @@ const UpdateReview = () => {
         fetch(`https://cloud-kitchen-server-sepia.vercel.app/update/${_id}`, {
             method: 'PUT',
             headers: {
-                "content-type": "application/json"
+                "content-type": "application/json",
+                authorization: `bearer ${localStorage.getItem('token')}`
             },
             body: JSON.stringify(updateReview)
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    return logOut();
+                }
+                return res.json()
+            })
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
