@@ -3,7 +3,8 @@ import { Helmet } from 'react-helmet-async';
 
 const Blogs = () => {
     return (
-        <div className="space-y-4 min-h-screen mb-40 mt-8">
+        <div data-aos="flip-left"
+            data-aos-duration="1000" className="space-y-4 min-h-screen mb-40 mt-8">
             <Helmet>
                 <title>Blogs</title>
             </Helmet>

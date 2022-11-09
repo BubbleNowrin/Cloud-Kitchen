@@ -8,6 +8,7 @@ import logo from '../../../Assets/Logo/logo.png';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
 
@@ -16,7 +17,7 @@ const Login = () => {
     const googleProvider = new GoogleAuthProvider();
 
     const location = useLocation();
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || '/';
 
@@ -51,8 +52,8 @@ const Login = () => {
                     })
 
                 form.reset();
+                navigate(from, { replace: true });
                 setLoader(false);
-                Navigate(from, { replace: true });
 
             })
             .catch(error => {
@@ -89,8 +90,8 @@ const Login = () => {
                         console.log(data);
                         localStorage.setItem('token', data.token);
                     })
+                navigate(from, { replace: true });
                 setLoader(false);
-                Navigate(from, { replace: true });
                 console.log(user);
             })
             .catch(error => {
@@ -204,7 +205,7 @@ const Login = () => {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                Google
+                                Google <FaGoogle className='ml-2'></FaGoogle>
                             </button>
                         </div>
                     </div>

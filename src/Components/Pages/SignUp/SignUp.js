@@ -1,17 +1,26 @@
 import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logGif from '../../../Assets/images/gif/124956-login.gif';
 import img from "../../../Assets/images/gif/Sign up-bro.png"
 import logo from '../../../Assets/Logo/logo.png';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaGoogle } from 'react-icons/fa';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const SignUp = () => {
 
     const [loader, setLoader] = useState(false);
-    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const { createUser, updateUserProfile, googleLogin } = useContext(AuthContext);
+
+    const googleProvider = new GoogleAuthProvider();
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleSignUp = (event) => {
         setLoader(true);
@@ -28,6 +37,7 @@ const SignUp = () => {
                 if (user) {
                     showToast();
                 }
+                navigate('/login');
                 setLoader(false);
                 form.reset();
                 handleUpdateUserProfile(name, photoURL);
@@ -39,6 +49,45 @@ const SignUp = () => {
                 const errorMessage = error.message;
                 if (error) {
                     showError(errorMessage)
+                }
+                console.log(errorMessage);
+            })
+    }
+
+    const handleGoogleLogin = () => {
+        setLoader(true);
+        googleLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                showToast();
+                const currentUser = {
+                    email: user.email
+                }
+                // console.log(currentUser);
+                //get jwt token
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('token', data.token);
+                    })
+                navigate(from, { replace: true });
+                setLoader(false);
+
+                console.log(user);
+            })
+            .catch(error => {
+                setLoader(false);
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                if (error) {
+                    showError(errorMessage);
                 }
                 console.log(errorMessage);
             })
@@ -168,6 +217,18 @@ const SignUp = () => {
                                     Already have an account?
                                     <Link to="/login" className="text-gray-700 underline font-bold">Log In</Link> here.
                                 </p>
+                            </div>
+                            <div className="col-span-6 flex items-center flex-col mb-4 gap-4">
+                                <p className="mt-4 text-sm text-gray-500 sm:mt-0">
+                                    Sign Up with Socials?
+                                </p>
+                                <button onClick={handleGoogleLogin}
+                                    className="inline-flex items-center rounded border-2 bg-lime-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-transparent hover:text-lime-700 focus:outline-none focus:ring active:opacity-75"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    Google <FaGoogle className='ml-2'></FaGoogle>
+                                </button>
                             </div>
                         </form>
                     </div>

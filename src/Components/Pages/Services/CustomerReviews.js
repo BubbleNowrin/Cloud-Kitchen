@@ -6,7 +6,8 @@ const CustomerReviews = ({ rev }) => {
     return (
 
         <div>
-            <section className="bg-white">
+            <section data-aos="flip-left"
+                data-aos-duration="1500" className="bg-white">
                 <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
                     <div
                         className="mt-4"

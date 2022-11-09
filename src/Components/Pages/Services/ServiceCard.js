@@ -6,7 +6,8 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 const ServiceCard = ({ food }) => {
     const { image, foodName, details, price, _id } = food;
     return (
-        <div className={'mx-auto max-w-xs rounded-md shadow-md bg-lime-200 dark:text-gray-100'}>
+        <div data-aos="zoom-in-up"
+            data-aos-duration="1000" className={'mx-auto max-w-xs rounded-md shadow-md bg-lime-200 dark:text-gray-100'}>
             <PhotoProvider>
                 <PhotoView src={image}>
                     <img src={image} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
