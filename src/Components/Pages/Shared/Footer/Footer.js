@@ -32,7 +32,7 @@ const Footer = () => {
                             <li>Weekend: 10am - 3pm</li>
                         </ul>
 
-                        <div class="mt-16 flex gap-3">
+                        <div class="mt-16 flex gap-3 ml-16">
                             <Link
                                 class="rounded-full border border-lime-800 p-2 hover:opacity-75"
                                 to=""
@@ -159,13 +159,13 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <p class="font-medium">Products</p>
+                            <p class="font-medium">Services</p>
 
                             <nav class="mt-4 flex flex-col space-y-2 text-sm text-lime-800">
-                                <Link class="hover:opacity-75" to=""> 1to1 Coaching </Link>
-                                <Link class="hover:opacity-75" to=""> Lesson Plans </Link>
+                                <Link class="hover:opacity-75" to=""> Blogs </Link>
+                                <Link class="hover:opacity-75" to=""> Cooking Plans </Link>
                                 <Link class="hover:opacity-75" to=""> Meal Plans </Link>
-                                <Link class="hover:opacity-75" to=""> Gym Sessions </Link>
+                                <Link class="hover:opacity-75" to=""> Cooking Sessions </Link>
                             </nav>
                         </div>
                     </div>

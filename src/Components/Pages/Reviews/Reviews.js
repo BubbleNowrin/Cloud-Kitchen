@@ -55,24 +55,17 @@ const Reviews = () => {
             {
                 currentUserReview.length > 0 ?
                     <>
-                        <div className="overflow-x-auto  w-full mt-10 min-h-screen">
-                            <table className="table w-full">
+                        <div className="overflow-x-auto lg:max-w-screen mt-10 min-h-screen">
+                            <table className="table table-compact w-full">
 
                                 <thead className=''>
                                     <tr>
+                                        <th>
+
+                                        </th>
                                         <th>Service Name</th>
                                         <th>Review By</th>
                                         <th>Review</th>
-                                        <th>
-                                            <label>
-                                                <p>Delete</p>
-                                            </label>
-                                        </th>
-                                        <th>
-                                            <label>
-                                                <p>Update</p>
-                                            </label>
-                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -86,7 +79,7 @@ const Reviews = () => {
                         </div>
                     </>
                     :
-                    <div className='flex flex-col md:flex-row lg:flex-row items-center justify-center my-10 max-h-screen'>
+                    <div className='flex flex-col md:flex-row lg:flex-row items-center justify-start my-10 max-h-screen'>
                         <img src={nothing} alt="" />
                         <p className='text-3xl font-semibold text-lime-700'>No reviews were added</p>
                     </div>
