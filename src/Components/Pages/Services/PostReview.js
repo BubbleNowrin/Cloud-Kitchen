@@ -10,6 +10,7 @@ const PostReview = ({ food, setReviews }) => {
     const name = user?.displayName;
     const photoURL = user?.photoURL;
     const email = user?.email;
+    const date = new Date();
 
     const handlePostReview = (event) => {
         event.preventDefault();
@@ -23,7 +24,8 @@ const PostReview = ({ food, setReviews }) => {
             serviceName: foodName,
             serviceImage: image,
             servicePrice: price,
-            email
+            email,
+            date
         }
         fetch(`http://localhost:5000/reviews/${_id}`, {
             method: 'POST',

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import logGif from '../../../Assets/images/gif/124956-login.gif';
@@ -7,25 +7,28 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const SignUp = () => {
 
+    const [loader, setLoader] = useState(false);
     const { createUser, updateUserProfile } = useContext(AuthContext);
 
     const handleSignUp = (event) => {
-
+        setLoader(true);
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(name, email, password);
+
         createUser(email, password)
             .then(result => {
                 const user = result.user;
+                setLoader(false);
                 form.reset();
                 handleUpdateUserProfile(name, photoURL);
                 console.log(user);
             })
             .catch(error => {
+                setLoader(false);
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorMessage);
@@ -40,6 +43,9 @@ const SignUp = () => {
         updateUserProfile(profile)
             .then(() => { })
             .catch(err => console.log(err))
+    }
+    if (loader) {
+        return <div className='h-[60vh] flex items-center'><div className="mx-auto w-16 h-16 border-4 border-dashed rounded-full animate-spin border-lime-700"></div></div>
     }
 
     return (

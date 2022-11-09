@@ -1,5 +1,5 @@
 import { GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import image from '../../../Assets/images/gif/120735-fast-food.gif';
@@ -8,6 +8,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const Login = () => {
 
+    const [loader, setLoader] = useState(false);
     const { signIn, googleLogin } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
 
@@ -17,6 +18,7 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/';
 
     const handleLogin = (event) => {
+        setLoader(true);
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
@@ -27,10 +29,12 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 form.reset();
+                setLoader(false);
                 Navigate(from, { replace: true });
                 console.log(user);
             })
             .catch(error => {
+                setLoader(false);
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorMessage);
@@ -38,17 +42,24 @@ const Login = () => {
     }
 
     const handleGoogleLogin = () => {
+        setLoader(true);
         googleLogin(googleProvider)
             .then(result => {
                 const user = result.user;
+                setLoader(false);
                 Navigate(from, { replace: true });
                 console.log(user);
             })
             .catch(error => {
+                setLoader(false);
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorMessage);
             })
+    }
+
+    if (loader) {
+        return <div className='h-[60vh] flex items-center'><div className="mx-auto w-16 h-16 border-4 border-dashed rounded-full animate-spin border-lime-700"></div></div>
     }
 
     return (

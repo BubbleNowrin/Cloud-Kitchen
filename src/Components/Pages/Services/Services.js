@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../Contexts/AuthProvider';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
-    const foods = useLoaderData();
+    const [foods, setFoods] = useState([]);
+    const { loading, setLoading } = useContext(AuthContext);
 
+    useEffect(() => {
+        fetch('http://localhost:5000/foods')
+            .then(res => res.json())
+            .then(data => setFoods(data))
+        setLoading(false);
+    }, [setLoading])
+
+    if (loading) {
+        return <div className='h-[60vh] flex items-center'><div className="mx-auto w-16 h-16 border-4 border-dashed rounded-full animate-spin border-lime-700"></div></div>
+    }
     return (
         <div>
             <Helmet>
