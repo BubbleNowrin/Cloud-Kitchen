@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 
 function App() {
 
+  //Aos library setup
   useEffect(() => {
     AOS.init();
   }, [])

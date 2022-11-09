@@ -14,8 +14,11 @@ const Login = () => {
 
     const [loader, setLoader] = useState(false);
     const { signIn, googleLogin } = useContext(AuthContext);
+
+    //google provider
     const googleProvider = new GoogleAuthProvider();
 
+    //get location
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -24,11 +27,12 @@ const Login = () => {
     const handleLogin = (event) => {
         setLoader(true);
         event.preventDefault();
+        //get the user info
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(name, email, password);
+
         signIn(email, password)
             .then(result => {
                 const user = result.user;
@@ -36,9 +40,9 @@ const Login = () => {
                 const currentUser = {
                     email: user.email
                 }
-                // console.log(currentUser);
+
                 //get jwt token
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://cloud-kitchen-server-sepia.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         "content-type": "application/json"
@@ -48,11 +52,11 @@ const Login = () => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
+                        navigate(from, { replace: true });
                         localStorage.setItem('token', data.token);
                     })
 
                 form.reset();
-                navigate(from, { replace: true });
                 setLoader(false);
 
             })
@@ -63,7 +67,7 @@ const Login = () => {
                 if (error) {
                     showError(errorMessage);
                 }
-                console.log(errorMessage);
+
             })
     }
 
@@ -76,9 +80,9 @@ const Login = () => {
                 const currentUser = {
                     email: user.email
                 }
-                // console.log(currentUser);
+
                 //get jwt token
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://cloud-kitchen-server-sepia.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         "content-type": "application/json"
@@ -87,12 +91,13 @@ const Login = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+
                         localStorage.setItem('token', data.token);
+                        navigate(from, { replace: true });
                     })
-                navigate(from, { replace: true });
+
                 setLoader(false);
-                console.log(user);
+
             })
             .catch(error => {
                 setLoader(false);
@@ -108,6 +113,8 @@ const Login = () => {
     if (loader) {
         return <div className='h-[60vh] flex items-center'><div className="mx-auto w-16 h-16 border-4 border-dashed rounded-full animate-spin border-lime-700"></div></div>
     }
+
+    //toast
     const showToast = () => {
         toast.success("Successfully logged in", { autoclose: 5000 });
     }

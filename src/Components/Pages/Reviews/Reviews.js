@@ -11,9 +11,10 @@ const Reviews = () => {
     const [currentUserReview, setCurrentUserReview] = useState([]);
     const { user, logOut } = useContext(AuthContext);
 
+    //get the specific reviews by sending query
     useEffect(() => {
 
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+        fetch(`https://cloud-kitchen-server-sepia.vercel.app/reviews?email=${user?.email}`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
             }
@@ -29,13 +30,25 @@ const Reviews = () => {
             })
     }, [user?.email, logOut])
 
+
+    //delete review functionality
     const handleDeleteReview = (id) => {
         const agree = window.confirm('Are you sure you want to delete the review?');
         if (agree) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
-                method: 'DELETE'
+
+            //get the specific review to delete
+            fetch(`https://cloud-kitchen-server-sepia.vercel.app/reviews/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('token')}`
+                }
             })
-                .then(res => res.json())
+                .then(res => {
+                    if (res.status === 401 || res.status === 403) {
+                        return logOut();
+                    }
+                    return res.json()
+                })
                 .then(data => {
                     console.log(data);
                     if (data.deletedCount > 0) {
@@ -49,6 +62,7 @@ const Reviews = () => {
 
     }
 
+    //toast
     const showToast = () => {
         toast.success("Deleted Successfully", { autoclose: 5000 });
     }

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,6 +8,8 @@ const PostReview = ({ food, setReviews }) => {
 
     const { _id, image, foodName, price } = food;
     const { user } = useContext(AuthContext);
+
+    const location = useLocation();
 
     const name = user?.displayName;
     const photoURL = user?.photoURL;
@@ -29,7 +31,9 @@ const PostReview = ({ food, setReviews }) => {
             email,
             date
         }
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+
+        //post review to the server for specific service
+        fetch(`https://cloud-kitchen-server-sepia.vercel.app/reviews/${_id}`, {
             method: 'POST',
             headers: {
                 "content-type": "application/json"
@@ -42,7 +46,7 @@ const PostReview = ({ food, setReviews }) => {
                 if (data.acknowledged) {
                     showToast();
                     form.reset();
-                    fetch(`http://localhost:5000/reviews/${_id}`)
+                    fetch(`https://cloud-kitchen-server-sepia.vercel.app/reviews/${_id}`)
                         .then(res => res.json())
                         .then(data => setReviews(data))
                 }
@@ -50,6 +54,7 @@ const PostReview = ({ food, setReviews }) => {
 
     }
 
+    //toast
     const showToast = () => {
         toast.success("Successfully Posted Review", { autoclose: 5000 });
     }
@@ -67,7 +72,7 @@ const PostReview = ({ food, setReviews }) => {
                         </form>
                     </>
                     :
-                    <p className='text-2xl font-bold text-lime-700'>Please Login first to add a review. <Link className="text-gray-700 underline" to={'/login'}>Login Here.</Link></p>
+                    <p className='text-2xl font-bold text-lime-700'>Please Login first to add a review. <Link className="text-gray-700 underline" state={{ from: location }} replace to={'/login'}>Login Here.</Link></p>
             }
 
         </div>

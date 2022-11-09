@@ -15,8 +15,10 @@ const SignUp = () => {
     const [loader, setLoader] = useState(false);
     const { createUser, updateUserProfile, googleLogin } = useContext(AuthContext);
 
+    //google provider
     const googleProvider = new GoogleAuthProvider();
 
+    // get location
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -25,6 +27,7 @@ const SignUp = () => {
     const handleSignUp = (event) => {
         setLoader(true);
         event.preventDefault();
+        //get user info
         const form = event.target;
         const name = form.name.value;
         const photoURL = form.photoURL.value;
@@ -37,11 +40,29 @@ const SignUp = () => {
                 if (user) {
                     showToast();
                 }
-                navigate('/login');
+                const currentUser = {
+                    email: user.email
+                }
+
+                //get jwt token
+                fetch('https://cloud-kitchen-server-sepia.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        navigate('/');
+                        localStorage.setItem('token', data.token);
+                    })
+
                 setLoader(false);
                 form.reset();
                 handleUpdateUserProfile(name, photoURL);
-                console.log(user);
+
             })
             .catch(error => {
                 setLoader(false);
@@ -50,7 +71,7 @@ const SignUp = () => {
                 if (error) {
                     showError(errorMessage)
                 }
-                console.log(errorMessage);
+
             })
     }
 
@@ -63,9 +84,9 @@ const SignUp = () => {
                 const currentUser = {
                     email: user.email
                 }
-                // console.log(currentUser);
+
                 //get jwt token
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://cloud-kitchen-server-sepia.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         "content-type": "application/json"
@@ -75,12 +96,13 @@ const SignUp = () => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
+                        navigate(from, { replace: true });
                         localStorage.setItem('token', data.token);
                     })
-                navigate(from, { replace: true });
+
                 setLoader(false);
 
-                console.log(user);
+
             })
             .catch(error => {
                 setLoader(false);
@@ -89,10 +111,11 @@ const SignUp = () => {
                 if (error) {
                     showError(errorMessage);
                 }
-                console.log(errorMessage);
+
             })
     }
 
+    //update user profile functionality
     const handleUpdateUserProfile = (name, photoURL) => {
         const profile = {
             displayName: name,
@@ -106,6 +129,7 @@ const SignUp = () => {
         return <div className='h-[60vh] flex items-center'><div className="mx-auto w-16 h-16 border-4 border-dashed rounded-full animate-spin border-lime-700"></div></div>
     }
 
+    //toast
     const showToast = () => {
         toast.success("Successfully Registered! Please log in", { autoclose: 5000 });
     }

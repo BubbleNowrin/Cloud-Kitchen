@@ -10,7 +10,7 @@ const UpdateReview = () => {
     const userReview = useLoaderData();
     const [reviews, setReviews] = useState(userReview);
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     const { review, _id } = reviews;
 
@@ -22,7 +22,8 @@ const UpdateReview = () => {
             review: editedReview
         }
 
-        fetch(`http://localhost:5000/update/${_id}`, {
+        //get the specific review to update
+        fetch(`https://cloud-kitchen-server-sepia.vercel.app/update/${_id}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
@@ -35,12 +36,22 @@ const UpdateReview = () => {
                 if (data.modifiedCount > 0) {
                     showToast();
                     event.target.reset();
-                    fetch(`http://localhost:5000/update/${reviews._id}`)
+                    //show the updated review
+                    fetch(`https://cloud-kitchen-server-sepia.vercel.app/update/${reviews._id}`)
                         .then(res => res.json())
                         .then(data => setReviews(data))
                         .catch(err => console.error(err))
-                    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-                        .then(res => res.json())
+                    fetch(`https://cloud-kitchen-server-sepia.vercel.app/reviews?email=${user?.email}`, {
+                        headers: {
+                            authorization: `bearer ${localStorage.getItem('token')}`
+                        }
+                    })
+                        .then(res => {
+                            if (res.status === 401 || res.status === 403) {
+                                return logOut();
+                            }
+                            return res.json()
+                        })
                         .then(data => {
                             console.log(data);
                         })
@@ -48,6 +59,7 @@ const UpdateReview = () => {
             })
     }
 
+    //toast
     const showToast = () => {
         toast.success("Successfully Updated Review", { autoclose: 5000 });
     }
@@ -90,7 +102,7 @@ const UpdateReview = () => {
                                     </textarea>
                                     <div className="mt-8 flex justify-center gap-0.5 text-green-500">
                                         <button
-                                            class="inline-block rounded bg-lime-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-lime-500"
+                                            className="inline-block rounded bg-lime-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-lime-500"
                                         >
                                             Update Review
                                         </button>

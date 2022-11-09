@@ -15,6 +15,9 @@ import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
 
 export const routes = createBrowserRouter([
+
+    //routes setup
+
     {
         path: '/',
         element: <Main></Main>,
@@ -22,12 +25,12 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                loader: () => fetch('http://localhost:5000/food'),
+                loader: () => fetch('https://cloud-kitchen-server-sepia.vercel.app/food'),
                 element: <Home></Home>
             },
             {
                 path: '/home',
-                loader: () => fetch('http://localhost:5000/food'),
+                loader: () => fetch('https://cloud-kitchen-server-sepia.vercel.app/food'),
                 element: <Home></Home>
             },
             {
@@ -36,7 +39,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/details/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/foods/${params.id}`),
+                loader: ({ params }) => fetch(`https://cloud-kitchen-server-sepia.vercel.app/foods/${params.id}`),
                 element: <Details></Details>
             },
             {
@@ -49,7 +52,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/update/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/update/${params.id}`),
+                loader: ({ params }) => fetch(`https://cloud-kitchen-server-sepia.vercel.app/update/${params.id}`),
                 element: <PrivateRoutes><UpdateReview></UpdateReview></PrivateRoutes>
             },
             {

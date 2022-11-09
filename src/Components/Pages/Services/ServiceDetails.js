@@ -40,7 +40,7 @@ const ServiceDetails = ({ food, setReviews, reviews }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {
                     useEffect(() => {
-                        fetch(`http://localhost:5000/reviews/${_id}`)
+                        fetch(`https://cloud-kitchen-server-sepia.vercel.app/reviews/${_id}`)
                             .then(res => res.json())
                             .then(data => setReviews(data))
                     }, [_id, setReviews])

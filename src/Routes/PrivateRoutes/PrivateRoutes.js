@@ -3,6 +3,9 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
 const PrivateRoutes = ({ children }) => {
+
+    //private route implementation
+
     const { user, loading } = useContext(AuthContext);
 
     const location = useLocation()

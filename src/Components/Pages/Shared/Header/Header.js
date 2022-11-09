@@ -8,6 +8,7 @@ const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    //logout implementation
     const handleLogOut = () => {
         logOut()
             .then()

@@ -8,8 +8,9 @@ const Services = () => {
     const [foods, setFoods] = useState([]);
     const { loading, setLoading } = useContext(AuthContext);
 
+    //load the services 
     useEffect(() => {
-        fetch('http://localhost:5000/foods')
+        fetch('https://cloud-kitchen-server-sepia.vercel.app/foods')
             .then(res => res.json())
             .then(data => setFoods(data))
         setLoading(false);

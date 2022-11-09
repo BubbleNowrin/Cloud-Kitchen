@@ -5,6 +5,8 @@ import Header from '../Shared/Header/Header';
 import errorPic from '../../../Assets/images/gif/9195-error.gif';
 
 const ErrorPage = () => {
+
+    //Get The Error 
     const error = useRouteError();
 
     return (

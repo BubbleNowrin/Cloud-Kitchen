@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const CurrentReview = ({ rvw, handleDeleteReview, setCurrentUserReview }) => {
-    // console.log(rvw);
+
     const { name, review, serviceImage, serviceName, servicePrice, _id } = rvw;
 
     return (
