@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
+import updatePng from "../../../Assets/images/gif/48218-update-color-flow.gif";
 
 const UpdateReview = () => {
     const userReview = useLoaderData();
@@ -51,40 +52,47 @@ const UpdateReview = () => {
                 <title>Update Review</title>
             </Helmet>
 
-            <div>
-                <section className="bg-white">
-                    <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-                        <div
-                            className="mt-4 bg-lime-200"
-                        >
+            <section className="bg-lime-200 mt-10 mb-24">
+                <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
+                    <section
+                        className="relative flex h-32 items-end bg-lime-400 lg:col-span-5 lg:h-full xl:col-span-6"
+                    >
+                        <img
+                            alt="Night"
+                            src={updatePng}
+                            className="absolute inset-0 h-full w-full object-cover opacity-80"
+                        />
+                    </section>
+
+                    <main
+                        aria-label="Main"
+                        className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:py-12 lg:px-16 xl:col-span-6"
+                    >
+                        <div className="max-w-xl lg:max-w-3xl">
+
                             <div className=''>
-                                <p className='text-2xl text-gray-800 p-6'>
+                                <p className='text-2xl text-lime-500 py-6'>
                                     Review Posted:
                                 </p>
 
-                                <p className='text-xl text-gray-800 p-6'>
+                                <p className='text-xl text-lime-700 py-6'>
                                     {review}
                                 </p>
 
-                                <blockquote
-                                    className="-mt-6 flex flex-col justify-between rounded-lg p-12 text-center shadow-xl"
-                                >
+                                <form onSubmit={handleUpdateReview}>
+                                    <textarea type="text" name="update" className="mt-4 text-sm h-32 w-96 mx-auto " >
+                                    </textarea>
+                                    <div className="mt-8 flex justify-center gap-0.5 text-green-500">
+                                        <button type="submit" className="flex items-center justify-center h-12 px-6 mt-8 text-sm font-semibold rounded bg-lime-500 text-white">Update Review</button>
+                                    </div>
+                                </form>
 
-                                    <form onSubmit={handleUpdateReview}>
-                                        <textarea type="text" name="update" className="mt-4 text-sm h-32 w-96 mx-auto" >
-                                        </textarea>
-                                        <div className="mt-8 flex justify-center gap-0.5 text-green-500">
-                                            <button type="submit" className="flex items-center justify-center h-12 px-6 mt-8 text-sm font-semibold rounded bg-lime-500 text-white">Update Review</button>
-                                        </div>
-                                    </form>
-
-
-                                </blockquote>
                             </div>
                         </div>
-                    </div>
-                </section>
-            </div>
+                    </main>
+                </div>
+            </section>
+
         </div>
     );
 };

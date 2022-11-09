@@ -30,21 +30,21 @@ const FoodCard = ({ food }) => {
         //         </div>
         //     </div>
         // </div>
-        <div class="group relative block bg-black">
+        <div className="group relative block bg-black">
 
             <img
                 alt="Developer"
                 src={image}
-                class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+                className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
             />
-            <div class="relative p-8">
-                <p class="text-4xl font-bold text-lime-100 mb-4">{foodName}</p>
-                <p class="text-xl font-medium uppercase tracking-widest text-white">
+            <div className="relative p-8">
+                <p className="text-4xl font-bold text-lime-100 mb-4">{foodName}</p>
+                <p className="text-xl font-medium uppercase tracking-widest text-white">
                     Price: ${price}
                 </p>
-                <div class="mt-20">
+                <div className="mt-20">
                     <div
-                        class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+                        className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
                     >
                         <PhotoProvider>
                             <PhotoView src={image}>
@@ -52,7 +52,7 @@ const FoodCard = ({ food }) => {
                             </PhotoView>
                         </PhotoProvider>
 
-                        <p class="text-sm text-white">
+                        <p className="text-sm text-white">
                             {details.length > 100 ? details.slice(0, 100) + "..." : details}
                         </p>
                     </div>
