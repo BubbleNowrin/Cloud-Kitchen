@@ -2,7 +2,8 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import image from '../../../Assets/images/gif/120735-fast-food.gif';
+import gif from '../../../Assets/images/gif/120735-fast-food.gif';
+import image from "../../../Assets/images/gif/Computer login-bro.png";
 import logo from '../../../Assets/Logo/logo.png';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
@@ -142,7 +143,7 @@ const Login = () => {
                                     type="email"
                                     id="Email"
                                     name="email"
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full h-8 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                     required
                                 />
                             </div>
@@ -156,12 +157,12 @@ const Login = () => {
                                     type="password"
                                     id="Password"
                                     name="password"
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full h-8 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                     required
                                 />
                             </div>
 
-                            <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
+                            <div className="col-span-6 flex items-center flex-col mb-4 gap-4">
 
                                 <button
                                     className="inline-block rounded bg-lime-600 px-8 py-3 text-sm font-medium text-white transition hover:-rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-lime-500"
@@ -172,12 +173,12 @@ const Login = () => {
 
                                 <p className="mt-4 text-sm text-gray-500 sm:mt-0">
                                     Don't have an account?
-                                    <Link to="/signup" className="text-gray-700 underline">Sign Up</Link> here.
+                                    <Link to="/signup" className="text-gray-700 underline font-bold">Sign Up</Link> here.
                                 </p>
 
                             </div>
                         </form>
-                        <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
+                        <div className="col-span-6 flex items-center flex-col mb-4 gap-4">
                             <p className="mt-4 text-sm text-gray-500 sm:mt-0">
                                 Login with Socials?
                             </p>

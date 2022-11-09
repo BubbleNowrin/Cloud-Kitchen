@@ -83,7 +83,11 @@ const UpdateReview = () => {
                                     <textarea type="text" name="update" className="mt-4 text-sm h-32 w-96 mx-auto " >
                                     </textarea>
                                     <div className="mt-8 flex justify-center gap-0.5 text-green-500">
-                                        <button type="submit" className="flex items-center justify-center h-12 px-6 mt-8 text-sm font-semibold rounded bg-lime-500 text-white">Update Review</button>
+                                        <button
+                                            class="inline-block rounded bg-lime-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-lime-500"
+                                        >
+                                            Update Review
+                                        </button>
                                     </div>
                                 </form>
 

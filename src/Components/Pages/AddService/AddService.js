@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import png from "../../../Assets/images/gif/Publish article-bro.png";
 
 const AddService = () => {
 
@@ -40,7 +41,7 @@ const AddService = () => {
     }
     return (
 
-        <section className="bg-lime-200 my-10">
+        <section className="bg-lime-200 mt-10 mb-24">
             <Helmet>
                 <title>Add Service</title>
             </Helmet>
@@ -50,7 +51,7 @@ const AddService = () => {
                 >
                     <img
                         alt="Pattern"
-                        src="https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                        src={png}
                         className="absolute inset-0 h-full w-full object-cover"
                     />
                 </aside>
@@ -70,14 +71,14 @@ const AddService = () => {
                         <form onSubmit={handleAddService} className="mt-8 grid grid-cols-6 gap-6">
                             <div className="col-span-6">
                                 <label htmlFor="serviceName" className="block text-sm font-medium text-gray-700">
-                                    Name
+                                    Service Name
                                 </label>
 
                                 <input
                                     type="text"
                                     id="serviceName"
                                     name="name"
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full h-8 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                     required
                                 />
                             </div>
@@ -91,7 +92,7 @@ const AddService = () => {
                                     type="text"
                                     id="serviceImage"
                                     name="image"
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full h-8 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                     required
                                 />
                             </div>
@@ -105,7 +106,7 @@ const AddService = () => {
                                     type="text"
                                     id="Price"
                                     name="price"
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full h-8 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                     required
                                 />
                             </div>
@@ -118,16 +119,24 @@ const AddService = () => {
                                 <input
                                     type="text"
                                     name="details"
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full h-8 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                     required
                                 />
                             </div>
 
                             <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                                 <button
-                                    className="inline-block shrink-0 rounded-md border border-lime-600 bg-lime-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-lime-600 focus:outline-none focus:ring active:text-lime-500 ml-3"
+                                    class="group relative inline-block text-sm font-medium text-white focus:outline-none focus:ring"
+
                                 >
-                                    Add Service
+                                    <span
+                                        class="absolute inset-0 border border-lime-600 group-active:border-lime-500"
+                                    ></span>
+                                    <span
+                                        class="block border border-lime-600 bg-lime-600 px-12 py-3 transition-transform active:border-lime-500 active:bg-lime-500 group-hover:-translate-x-1 group-hover:-translate-y-1"
+                                    >
+                                        Add Service
+                                    </span>
                                 </button>
                             </div>
                         </form>

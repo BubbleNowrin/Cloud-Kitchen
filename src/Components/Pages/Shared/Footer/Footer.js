@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import gif from "../../../../Assets/images/gif/104313-cooking-chef.gif";
+import gif from "../../../../Assets/images/gif/Pizza maker-bro.png";
 
 const Footer = () => {
     return (

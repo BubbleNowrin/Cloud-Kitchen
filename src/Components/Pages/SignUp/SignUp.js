@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import logGif from '../../../Assets/images/gif/124956-login.gif';
+import img from "../../../Assets/images/gif/Sign up-bro.png"
 import logo from '../../../Assets/Logo/logo.png';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
@@ -59,7 +60,7 @@ const SignUp = () => {
                 >
                     <img
                         alt="Night"
-                        src={logGif}
+                        src={img}
                         className="absolute inset-0 h-full w-full object-cover opacity-80"
                     />
 
@@ -92,7 +93,7 @@ const SignUp = () => {
                                     type="text"
                                     id="Name"
                                     name="name"
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full h-8 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                     required
                                 />
                             </div>
@@ -105,7 +106,7 @@ const SignUp = () => {
                                     type="text"
                                     id="Photo"
                                     name="photoURL"
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full h-8 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                     required
                                 />
                             </div>
@@ -118,7 +119,7 @@ const SignUp = () => {
                                     type="email"
                                     id="Email"
                                     name="email"
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full h-8 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                     required
                                 />
                             </div>
@@ -132,13 +133,13 @@ const SignUp = () => {
                                     type="password"
                                     id="Password"
                                     name="password"
-                                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                    className="mt-1 w-full h-8 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                                     required
                                 />
                             </div>
 
 
-                            <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
+                            <div className="col-span-6 flex items-center flex-col mb-4 gap-4">
 
                                 <button
                                     className="inline-block rounded bg-lime-600 px-8 py-3 text-sm font-medium text-white transition hover:-rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-lime-500"
@@ -149,7 +150,7 @@ const SignUp = () => {
 
                                 <p className="mt-4 text-sm text-gray-500 sm:mt-0">
                                     Already have an account?
-                                    <Link to="/login" className="text-gray-700 underline">Log In</Link> here.
+                                    <Link to="/login" className="text-gray-700 underline font-bold">Log In</Link> here.
                                 </p>
                             </div>
                         </form>
