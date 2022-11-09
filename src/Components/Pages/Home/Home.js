@@ -12,6 +12,7 @@ import Steps from './Steps';
 import Coupon from './Coupon';
 import Subscribe from './Subscribe';
 import { Helmet } from 'react-helmet-async';
+import Chef from './Chef';
 
 
 const Home = () => {
@@ -43,18 +44,18 @@ const Home = () => {
 
                             <Link
                                 className="inline-block rounded-full bg-gradient-to-r from-lime-500 via-green-500 to-yellow-500 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
-                                to="/reviews"
+                                to="/blogs"
                             >
                                 <span
                                     className="block rounded-full bg-white px-8 py-3 text-sm font-medium hover:bg-transparent"
                                 >
-                                    Reviews
+                                    Blogs
                                 </span>
                             </Link>
                         </div>
                     </div>
                 </div>
-                <div className="w-5/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-40 dark:bg-gray-500">
+                <div className="w-5/6 mx-auto mb-20 -mt-20 rounded-lg shadow-md lg:-mt-40 dark:bg-gray-500">
                     <div className="carousel w-full">
                         <div id="slide1" className="carousel-item relative w-full">
                             <img src={burger} alt="" className="w-full h-96 object-cover" />
@@ -109,11 +110,11 @@ const Home = () => {
                 </div>
 
             </section>
-            <div className="space-y-2 text-center my-8">
-                <h2 className="text-5xl font-bold text-lime-500">Our Popular Items</h2>
-                <p className="font-serif text-md text-lime-700">Italian Cuisine is the most sold item of our kitchen. Check it Out!</p>
+            <div className="space-y-2 text-center my-12">
+                <h2 className="text-5xl font-bold text-lime-500">My Popular Items</h2>
+                <p className="font-serif text-md text-lime-700">Italian Cuisine is the most sold item of my kitchen. Check it Out!</p>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {
                     foods.map(food => <FoodCard key={food._id} food={food}></FoodCard>)
                 }
@@ -133,6 +134,7 @@ const Home = () => {
             <Steps></Steps>
             <Coupon></Coupon>
             <Subscribe></Subscribe>
+            <Chef></Chef>
         </div>
     );
 };

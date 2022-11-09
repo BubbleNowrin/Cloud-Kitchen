@@ -39,7 +39,7 @@ const Steps = () => {
                         </svg>
                         <span className="relative">How</span>
                     </span>{' '}
-                    The Foodaholic Team Works
+                    The Foodaholic Works
                 </h2>
 
             </div>
@@ -118,7 +118,7 @@ const Steps = () => {
                     </div>
                     <h6 className="mb-2 text-2xl font-extrabold text-lime-700">Step 3</h6>
                     <p className="max-w-md mb-3 text-md text-gray-900 sm:mx-auto">
-                        We Deliver Your Meals
+                        Deliver Your Meals
                     </p>
 
                     <div className="top-0 right-0 flex items-center justify-center h-24 lg:-mr-8 lg:absolute">
