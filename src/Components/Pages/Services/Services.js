@@ -6,7 +6,7 @@ import ServiceCard from './ServiceCard';
 
 const Services = () => {
     const [foods, setFoods] = useState([]);
-    // const { loading, setLoading } = useContext(AuthContext);
+
     const [loading, setLoading] = useState(true);
 
     //load the services 

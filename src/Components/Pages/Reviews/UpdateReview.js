@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import updatePng from "../../../Assets/images/gif/48218-update-color-flow.gif";
 import { ToastContainer, toast } from 'react-toastify';
@@ -13,6 +13,8 @@ const UpdateReview = () => {
     const { user, logOut } = useContext(AuthContext);
 
     const { review, _id } = reviews;
+
+    const navigate = useNavigate();
 
     const handleUpdateReview = (event) => {
         event.preventDefault();
@@ -45,7 +47,10 @@ const UpdateReview = () => {
                     //show the updated review
                     fetch(`https://cloud-kitchen-server-sepia.vercel.app/update/${reviews._id}`)
                         .then(res => res.json())
-                        .then(data => setReviews(data))
+                        .then(data => {
+                            setReviews(data);
+
+                        })
                         .catch(err => console.error(err))
                     fetch(`https://cloud-kitchen-server-sepia.vercel.app/reviews?email=${user?.email}`, {
                         headers: {
@@ -60,6 +65,7 @@ const UpdateReview = () => {
                         })
                         .then(data => {
                             console.log(data);
+                            navigate('/reviews');
                         })
                 }
             })

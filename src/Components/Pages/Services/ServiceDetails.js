@@ -10,7 +10,7 @@ const ServiceDetails = ({ food, setReviews, reviews }) => {
             <div>
                 <div className="space-y-2 text-center my-8">
                     <h2 className="text-5xl font-bold text-gray-700">Details of <span className="text-5xl font-bold text-lime-500">{foodName}</span></h2>
-                    <p className="font-serif text-md text-lime-700">This Cuisine is the most sold item of our kitchen. Check it Out!</p>
+                    <p className="font-serif text-md text-lime-700">This Cuisine is the most sold item of my kitchen. Check it Out!</p>
                 </div>
                 <section className="p-4 lg:p-8 bg-lime-200 text-gray-700">
                     <div className="container mx-auto space-y-12">
