@@ -6,7 +6,7 @@ const Blogs = () => {
         <div data-aos="flip-left"
             data-aos-duration="1000" className="space-y-4 min-h-screen mb-40 mt-8">
             <Helmet>
-                <title>Blogs</title>
+                <title>Foodaholic -Blogs</title>
             </Helmet>
             <details className="group border-l-4 border-green-500 bg-lime-200 p-6" open>
                 <summary className="flex cursor-pointer items-center justify-between">

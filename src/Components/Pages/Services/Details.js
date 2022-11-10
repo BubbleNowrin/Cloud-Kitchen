@@ -13,7 +13,7 @@ const Details = () => {
     return (
         <div className='my-8'>
             <Helmet>
-                <title>Details</title>
+                <title>Foodaholic -Details</title>
             </Helmet>
 
             {

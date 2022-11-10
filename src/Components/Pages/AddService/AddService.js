@@ -66,7 +66,7 @@ const AddService = () => {
 
         <section className="bg-lime-200 mt-10 mb-24">
             <Helmet>
-                <title>Add Service</title>
+                <title>Foodaholic -Add Service</title>
             </Helmet>
             <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
                 <aside

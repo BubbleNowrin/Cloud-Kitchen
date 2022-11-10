@@ -79,7 +79,7 @@ const UpdateReview = () => {
     return (
         <div>
             <Helmet>
-                <title>Update Review</title>
+                <title>Foodaholic -Update Review</title>
             </Helmet>
 
             <section className="bg-lime-200 mt-10 mb-24">

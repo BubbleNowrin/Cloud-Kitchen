@@ -127,7 +127,7 @@ const Login = () => {
 
         <section className="bg-lime-200 mb-20 mt-10">
             <Helmet>
-                <title>Login</title>
+                <title>Foodaholic -Login</title>
             </Helmet>
             <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
                 <aside

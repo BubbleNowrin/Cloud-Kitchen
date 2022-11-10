@@ -26,7 +26,7 @@ const Services = () => {
     return (
         <div>
             <Helmet>
-                <title>Services</title>
+                <title>Foodaholic -Services</title>
             </Helmet>
             <div className="space-y-2 text-center my-8">
                 <h2 className="text-5xl font-bold text-lime-500">Items I Cook</h2>

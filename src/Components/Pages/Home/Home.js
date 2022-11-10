@@ -23,7 +23,7 @@ const Home = () => {
 
         <div>
             <Helmet>
-                <title>Home</title>
+                <title>Foodaholic -Home</title>
             </Helmet>
             <section>
                 <div className="dark:bg-violet-400">

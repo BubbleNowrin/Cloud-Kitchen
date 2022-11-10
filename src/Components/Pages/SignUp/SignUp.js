@@ -141,7 +141,7 @@ const SignUp = () => {
     return (
         <section className="bg-lime-200 mt-10 mb-20">
             <Helmet>
-                <title>SignUp</title>
+                <title>Foodaholic -SignUp</title>
             </Helmet>
             <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
                 <section

@@ -76,7 +76,7 @@ const Reviews = () => {
     return (
         <div>
             <Helmet>
-                <title>My Reviews</title>
+                <title>Foodaholic -My Reviews</title>
             </Helmet>
             {
                 currentUserReview.length > 0 ?
