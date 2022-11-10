@@ -4,10 +4,13 @@ import png from "../../../Assets/images/gif/Publish article-bro.png";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../../Contexts/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 const AddService = () => {
 
     const { logOut } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const handleAddService = (event) => {
         event.preventDefault();
@@ -47,6 +50,7 @@ const AddService = () => {
                 console.log(data)
                 form.reset();
                 if (data.acknowledged) {
+                    navigate('/services');
                     showToast();
                 }
 

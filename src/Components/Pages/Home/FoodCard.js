@@ -20,7 +20,7 @@ const FoodCard = ({ food }) => {
                 <p className="text-xl font-medium uppercase tracking-widest text-white">
                     Price: ${price}
                 </p>
-                <div className="mt-20">
+                <div className="h-full w-full">
                     <div
                         className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
                     >
