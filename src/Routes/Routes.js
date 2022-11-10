@@ -38,7 +38,7 @@ export const routes = createBrowserRouter([
                 element: <Services></Services>
             },
             {
-                path: '/details/:id',
+                path: '/services/:id',
                 loader: ({ params }) => fetch(`https://cloud-kitchen-server-sepia.vercel.app/foods/${params.id}`),
                 element: <Details></Details>
             },

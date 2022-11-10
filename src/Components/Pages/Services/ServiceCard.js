@@ -22,7 +22,7 @@ const ServiceCard = ({ food }) => {
                 <div className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md">
                     <Link
                         className="group relative inline-block overflow-hidden border border-lime-600 px-8 py-3 focus:outline-none focus:ring"
-                        to={`/details/${_id}`}
+                        to={`/services/${_id}`}
                     >
                         <span
                             className="absolute inset-x-0 bottom-0 h-[2px] bg-lime-600 transition-all group-hover:h-full group-active:bg-lime-500"
